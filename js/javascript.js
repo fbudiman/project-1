@@ -10,8 +10,16 @@ $(function(){
   $("#intro").hide();
 
   $("#begin").click(function() {
-      $(this).hide();
-      $("#intro").show();
+    $(this).hide();
+    $("#intro").show();
   });
+
+  $("#fran-zombie").click(function() {
+    $("#intro").hide('slow');
+  })
+
+  $("#ryan-zombie").click(function() {
+    $("#intro").hide('slow');
+  })
 
 });
