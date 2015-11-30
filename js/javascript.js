@@ -1,9 +1,14 @@
 
 var userName;
+var girlZombie;
+var boyZombie;
 
+function playerStats (life, strength) {
+  this.life = life;
+  this.strength = strength;
+}
 
 $(function(){
-
 
   $("#begin").hover(
     function() {
@@ -25,6 +30,7 @@ $(function(){
     $("#intro").hide('slow');
     $(".name").html(userName);
     $("#goals").show('slow');
+    girlZombie = new playerStats("high","low");
   })
 
   $("#ryan-zombie").click(function() {
@@ -32,6 +38,11 @@ $(function(){
     $("#intro").hide('slow');
     $(".name").html(userName);
     $("#goals").show('slow');
+    boyZombie = new playerStats("low","high");
+  })
+
+  $("#begin-game").click(function() {
+    $("#goals").hide('slow');
   })
 
 });
