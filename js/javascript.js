@@ -12,6 +12,12 @@ function playerStats (life, strength, name) {
   this.name = name;
 }
 
+function emptyLifeBar() {
+  clearInterval(lifeTimer);
+  alert("Your zombie has died of hunger... Game over :(");
+  active = false;
+}
+
 $(function(){
 
   $("#begin").hover(
@@ -72,42 +78,22 @@ $(function(){
 
   function minusLife() {
     if (active == true) {
-      if (girlZombie != undefined) {
-        lifeBar.value -= 2;
+      if (lifeBar.value > 0) {
+        if (girlZombie != undefined) {
+          lifeBar.value -= 2;
+        } else {
+          lifeBar.value -= 5;
+        }
       } else {
-        lifeBar.value -= 5;
+        emptyLifeBar();
       }
     }
   }
 
-  lifeTimer = setInterval(function(){ minusLife() }, 2000);
+  lifeTimer = setInterval(function(){ minusLife() }, 1000);
   //play around with timing - test out situations;
 
+
+
 });
-
-
-  function emptyLifeBar() {
-    if (lifeBar.value == 0) {
-      clearInterval(lifeTimer);
-      alert("Your zombie has died of hunger... Game over :(");
-      active = false;
-    }
-  }
-
-  emptyLifeBar();
-
-/*function move() {
-  var elem = document.getElementById("myBar");
-  var width = 0;
-  var id = setInterval(frame, 100);
-  function frame() {
-    if (width == 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + '%';
-    }
-  }
-}*/
-
 
