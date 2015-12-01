@@ -99,3 +99,11 @@ div#game-start {
 #stats {
   margin: 5px;
 }
+progress[value] {
+  background-color: white;
+  border: 1px solid black;
+}
+div#stats-show {
+  color: white;
+  margin-left: 5px;
+}
