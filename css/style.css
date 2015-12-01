@@ -79,7 +79,7 @@ button {
 }
 div#goals {
   background-color: rgba(0,0,0,0.4);
-  height: 335px;
+  height: 400px;
   width: 500px;
   padding: 15px;
   border: 1px solid white;
@@ -109,4 +109,47 @@ div#stats-show {
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin-left: 5px;
+}
+#up-arrow {
+  font-size: 28pt;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: block;
+  margin-left: 340px;
+}
+#left-arrow {
+  font-size: 28pt;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  float: left;
+  margin-top: 205px;
+}
+#right-arrow {
+  font-size: 28pt;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  float: left;
+  margin-top: 205px;
+}
+div#play-buttons {
+  display: block;
+}
+div#screen-one-left {
+  display: inline-block;
+}
+div#screen-one-right {
+  display: inline-block;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.arrows:hover {
+  cursor: cell;
+}
+.game-images {
+  width: 625px;
+  height: auto;
+  border: 1px solid white;
+  display: inline-block;
+  float: left;
+  margin: 10px;
 }

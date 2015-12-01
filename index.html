@@ -52,17 +52,35 @@
     <h2>Your Goal:</h2>
     <p id="game-goals">Now that you've chosen and named your zombie, your goal is to get <span class="name">zombie</span> to the Science Lab ALIVE (as alive as can be anyway). Make sure to keep <span class="name">zombie</span> well-fed... do whatever it takes. And be sure to judge a situation wisely, as it could mean life or death (for the most part).</p>
     <p>The Science Lab is 15 blocks straight down this street from where you are. However, you are encouraged to explore the streets to the right and left, just to see if there are any useful objects to pick up or... brains to munch on. Choose your path by clicking the corresponding arrows (straight, left, or right).</p>
+    <p>PS. Once you go down the path, you can no longer turn back! Your zombie brain just can't comprehend that much.</p>
     <button id="begin-game">Got it. Let's go!</button>
   </div>
 
   <div id="game-start">
-    <button id="pause">Pause</button>
-    <button id="stats">Stats</button>
+    <div id="play-buttons">
+      <button id="pause">Pause</button>
+      <button id="stats">Stats</button>
 
-    <div id="stats-show">
-      [Name: <span id="name-stats">name</span>]
-      [Strength: <span id="strength-stats">strength</span>]
-      <progress id="life-bar" value="100" max="100"></progress>
+      <div id="stats-show">
+        [Name: <span id="name-stats">name</span>]
+        [Strength: <span id="strength-stats">strength</span>]
+        <progress id="life-bar" value="100" max="100"></progress>
+      </div>
+    </div>
+
+    <div id="screen-one">
+      <div id="screen-one-left">
+        <span id="up-arrow" class="arrows">&#8673;</span>
+        <span id="left-arrow" class="arrows">&#8672;</span>
+        <img src="images/background2.jpg" id="background2" class="game-images">
+        <img src="images/cityscape7.jpg" id="cityscape7" class="game-images">
+        <img src="images/cityscape9.jpg" id="cityscape9" class="game-images">
+        <span id="right-arrow" class="arrows">&#8674;</span>
+      </div>
+
+      <div id="screen-one-right">
+        <p>This is where the text will be.</p>
+      </div>
     </div>
 
   </div>
