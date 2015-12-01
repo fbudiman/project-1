@@ -5,6 +5,7 @@ var boyZombie;
 var active = false;
 var lifeBar = document.getElementById("life-bar");
 var lifeTimer;
+var pauseGame = [];
 
 function playerStats (life, strength, name) {
   this.life = life;
@@ -18,7 +19,27 @@ function emptyLifeBar() {
   active = false;
 }
 
+function minusLife() {
+  if (active == true) {
+    if (lifeBar.value > 0) {
+      if (girlZombie != undefined) {
+        lifeBar.value -= 2;
+      } else {
+        lifeBar.value -= 5;
+      }
+    } else {
+      emptyLifeBar();
+    }
+  }
+}
+
 $(function(){
+
+
+  $("#intro").hide();
+  $("#goals").hide();
+  $("#game-start").hide();
+  $("#stats-show").hide();
 
   $("#begin").hover(
     function() {
@@ -26,10 +47,6 @@ $(function(){
     },function() {
       $(this).animate({ color: "#FFFFFF" }, 'slow');
   });
-
-  $("#intro").hide();
-  $("#goals").hide();
-  $("#game-start").hide();
 
   $("#begin").click(function() {
     $(this).hide();
@@ -59,11 +76,14 @@ $(function(){
   })
 
   $("#pause").click(function() {
-    active = false;
+    if (pauseGame.length % 2 == 0) {
+      active = false;
+      pauseGame.push("X");
+    } else {
+      active = true;
+      pauseGame.push("X");
+    }
   })
-  //need to fix pause button
-
-  $("#stats-show").hide();
 
   $("#stats").click(function() {
     $("#stats-show").toggle('slow');
@@ -75,20 +95,6 @@ $(function(){
       $("#name-stats").html(boyZombie.name);
     }
   });
-
-  function minusLife() {
-    if (active == true) {
-      if (lifeBar.value > 0) {
-        if (girlZombie != undefined) {
-          lifeBar.value -= 2;
-        } else {
-          lifeBar.value -= 5;
-        }
-      } else {
-        emptyLifeBar();
-      }
-    }
-  }
 
   lifeTimer = setInterval(function(){ minusLife() }, 1000);
   //play around with timing - test out situations;
