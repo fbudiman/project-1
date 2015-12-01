@@ -15,7 +15,7 @@ function playerStats (life, strength, name) {
 
 function emptyLifeBar() {
   clearInterval(lifeTimer);
-  alert("Your zombie has died of hunger... Game over :(");
+  alert(userName + " has died of hunger... Game over :(");
   active = false;
 }
 

@@ -30,22 +30,22 @@ h1 {
 div#zombie1 {
   display: inline-block;
   max-width: 800px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,0.4);
   margin: 0px 20px 20px 20px;
   padding: 15px;
-  border: 1px solid black;
-  color: black;
-  /*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+  border: 1px solid white;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 div#zombie2 {
   display: inline-block;
   max-width: 800px;
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,0.4);
   margin: 0px 20px 20px 20px;
   padding: 15px;
-  border: 1px solid black;
-  color: black;
-  /*text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;*/
+  border: 1px solid white;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 h2 {
   color: white;
@@ -78,17 +78,19 @@ button {
   background-color: black;
 }
 div#goals {
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(0,0,0,0.4);
   height: 335px;
   width: 500px;
   padding: 15px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin: 0px 370px;
   text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 div#game-start {
   background-color: rgba(0,0,0,0.5);
-  height: 600px;
+  height: 590px;
   width: auto;
   margin: 20px;
   border: 1px solid white;
@@ -105,5 +107,6 @@ progress[value] {
 }
 div#stats-show {
   color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin-left: 5px;
 }
