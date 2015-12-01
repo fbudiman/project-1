@@ -2,6 +2,7 @@
 var userName;
 var girlZombie;
 var boyZombie;
+var active = true;
 
 function playerStats (life, strength) {
   this.life = life;
@@ -19,6 +20,7 @@ $(function(){
 
   $("#intro").hide();
   $("#goals").hide();
+  $("#game-start").hide();
 
   $("#begin").click(function() {
     $(this).hide();
@@ -43,6 +45,11 @@ $(function(){
 
   $("#begin-game").click(function() {
     $("#goals").hide('slow');
+    $("#game-start").show('slow');
+  })
+
+  $("#pause").click(function() {
+    active = false;
   })
 
 });

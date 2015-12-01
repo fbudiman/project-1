@@ -53,7 +53,7 @@ h2 {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 div#directions {
-  height: 575px;
+  height: 600px;
   width: 350px;
   margin-right: 50px;
   color: white;
@@ -85,4 +85,17 @@ div#goals {
   border: 1px solid black;
   margin: 0px 370px;
   text-align: center;
+}
+div#game-start {
+  background-color: rgba(0,0,0,0.5);
+  height: 600px;
+  width: auto;
+  margin: 20px;
+  border: 1px solid white;
+}
+#pause {
+  margin: 5px;
+}
+#stats {
+  margin: 5px;
 }
