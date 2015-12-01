@@ -62,7 +62,7 @@ div#directions {
   position: fixed;
   display: inline-block;
   font-family: Georgia;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 div#intro {
   display: inline-block;
