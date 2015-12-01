@@ -10,6 +10,22 @@ var rightImage;
 var leftImage;
 var centerImage = true;
 
+var screenOne;
+var screenTwo;
+var screenThree;
+var screenFour;
+var screenFive;
+var screenSix;
+var screenSeven;
+var screenEight;
+var screenNine;
+var screenTen;
+var screenEleven;
+var screenTwelve;
+var screenThirteen;
+var screenFourteen;
+var screenFifteen;
+
 function playerStats (life, strength, name) {
   this.life = life;
   this.strength = strength;
@@ -35,6 +51,25 @@ function minusLife() {
     }
   }
 }
+
+function rightImageBool() {
+  rightImage = true;
+  centerImage = false;
+  leftImage = false;
+}
+
+function centerImageBool() {
+  centerImage = true;
+  leftImage = false;
+  rightImage = false;
+}
+
+function leftImageBool() {
+  leftImage = true;
+  centerImage = false;
+  rightImage = false;
+}
+
 
 
 $(function(){
@@ -80,6 +115,7 @@ $(function(){
     $("#goals").hide('slow');
     $("#game-start").show('slow');
     active = true;
+    screenOne = true;
   })
 
   $("#pause").click(function() {
@@ -107,22 +143,72 @@ $(function(){
   //play around with timing - test out situations;
 
 
+  $("#up-arrow").click(function() {
+    if (active) {
+      if (screenOne == true) {
+        screenTwo = true;
+        screenOne = false;
+      } else if (screenTwo == true) {
+        screenThree = true;
+        screenTwo = false;
+      } else if (screenThree == true){
+        screenFour = true;
+        screenThree = false;
+      } else if (screenFour == true) {
+        screenFive = true;
+        screenFour = false;
+      } else if (screenFive == true) {
+        screenSix = true;
+        screenFive = false;
+      } else if (screenSix == true) {
+        screenSeven = true;
+        screenSix = false;
+      } else if (screenSeven == true) {
+        screenEight = true;
+        screenSeven = false;
+      } else if (screenEight == true) {
+        screenNine = true;
+        screenEight = false;
+      } else if (screenNine == true) {
+        screenTen = true;
+        screenNine = false;
+      } else if (screenTen == true) {
+        screenEleven = true;
+        screenTen = false;
+      } else if (screenEleven == true) {
+        screenTwelve = true;
+        screenEleven = false;
+      } else if (screenTwelve == true) {
+        screenThirteen = true;
+        screenTwelve = false;
+      } else if (screenThirteen == true) {
+        screenFourteen = true;
+        screenThirteen = false;
+      } else if (screenFourteen == true) {
+        screenFifteen = true;
+        screenFourteen = false;
+      }
+    }
+  })
+
+
   $("#right-arrow").click(function() {
     if (active) {
-      if (centerImage == true) {
-        rightImage = true;
-        centerImage = false;
-        leftImage = false;
-        $(this).hide();
-        $("#background2").hide('slow');
-        $("#cityscape7").show('slow');
-      } else if (leftImage == true) {
-        centerImage = true;
-        leftImage = false;
-        rightImage = false;
-        $("#left-arrow").show();
-        $("#cityscape9").hide('slow');
-        $("#background2").show('slow');
+      if (screenOne == true) {
+        if (centerImage == true) {
+          rightImageBool();
+          $(this).hide();
+          $("#background2").hide('slow');
+          $("#cityscape7").show('slow');
+        } else if (leftImage == true) {
+          centerImageBool();
+          $("#left-arrow").show();
+          $("#cityscape9").hide('slow');
+          $("#background2").show('slow');
+        }
+      //} else if (screenTwo == true) {
+
+      //}
       }
     }
   });
@@ -130,16 +216,12 @@ $(function(){
   $("#left-arrow").click(function() {
     if (active) {
       if (centerImage == true) {
-        leftImage = true;
-        centerImage = false;
-        rightImage = false;
+        leftImageBool();
         $(this).hide();
         $("#background2").hide('slow');
         $("#cityscape9").show('slow');
       } else if (rightImage == true) {
-        centerImage = true;
-        rightImage = false;
-        leftImage = false;
+        centerImageBool();
         $("#right-arrow").show();
         $("#cityscape7").hide('slow');
         $("#background2").show('slow');
