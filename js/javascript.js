@@ -123,10 +123,10 @@ $('body').css('visibility', 'visible');
   $("#cityscape14").hide();
   $("#cityscape19").hide();
 
-  $("#background8").hide();
+  $("#background8X").hide();
   $("#cityscape12").hide();
 
-  $("#background8X").hide();
+  $("#background8").hide();
   $("#cityscape18").hide();
   $("#cityscape21").hide();
 
@@ -268,15 +268,15 @@ $('body').css('visibility', 'visible');
         } else if (screenTwelve == true) {
           screenThirteen = true;
           screenTwelve = false;
-          $("#background8").show('slow');
+          $("#background8X").show('slow');
           $("#background7X").hide();
           $("#cityscape14").hide();
           $("#cityscape19").hide();
         } else if (screenThirteen == true) {
           screenFourteen = true;
           screenThirteen = false;
-          $("#background8X").show('slow');
-          $("#background8").hide();
+          $("#background8").show('slow');
+          $("#background8X").hide();
           $("#cityscape12").hide();
         } else if (screenFourteen == true) {
           screenFifteen = true;
@@ -425,19 +425,19 @@ $('body').css('visibility', 'visible');
           centerImageBool();
           $("#left-arrow").show();
           $("#cityscape12").hide('slow');
-          $("#background8").show('slow');
+          $("#background8X").show('slow');
         }
       } else if (screenFourteen == true) {
         if (centerImage == true) {
           rightImageBool();
           $(this).hide();
-          $("#background8X").hide('slow');
+          $("#background8").hide('slow');
           $("#cityscape18").show('slow');
         } else if (leftImage == true) {
           centerImageBool();
           $("#left-arrow").show();
           $("#cityscape21").hide('slow');
-          $("#background8X").show('slow');
+          $("#background8").show('slow');
         }
       } else if (screenFifteen == true) {
 
@@ -501,7 +501,10 @@ $('body').css('visibility', 'visible');
         }
       } else if (screenSix == true) {
         if (centerImage == true) {
-          alert("There is nothing to the left.");
+          leftImageBool();
+          $(this).hide();
+          $("#background4X").hide('slow');
+          $("#cityscape15").show('slow');
         } else if (rightImage == true) {
           centerImageBool();
           $("#right-arrow").show();
@@ -574,7 +577,7 @@ $('body').css('visibility', 'visible');
         if (centerImage == true) {
           leftImageBool();
           $(this).hide();
-          $("#background8").hide('slow');
+          $("#background8X").hide('slow');
           $("#cityscape12").show('slow');
         } else if (rightImage == true) {
         }
@@ -582,13 +585,13 @@ $('body').css('visibility', 'visible');
         if (centerImage == true) {
           leftImageBool();
           $(this).hide();
-          $("#background8X").hide('slow');
+          $("#background8").hide('slow');
           $("#cityscape21").show('slow');
         } else if (rightImage == true) {
           centerImageBool();
           $("#right-arrow").show();
           $("#cityscape18").hide('slow');
-          $("#background8X").show('slow');
+          $("#background8").show('slow');
         }
       } else if (screenFifteen == true) {
 

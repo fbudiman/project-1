@@ -112,25 +112,24 @@ div#stats-show {
   margin-left: 5px;
 }
 #up-arrow {
-  font-size: 28pt;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   display: block;
-  margin-left: 340px;
+  margin-left: 330px;
 }
 #left-arrow {
-  font-size: 28pt;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   float: left;
-  margin-top: 205px;
+  margin-top: 210px;
 }
 #right-arrow {
+  float: left;
+  margin-top: 210px;
+}
+.arrows {
   font-size: 28pt;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  float: left;
-  margin-top: 205px;
+}
+.arrows:hover {
+  cursor: cell;
 }
 div#play-buttons {
   display: block;
@@ -142,9 +141,6 @@ div#screen-right {
   display: inline-block;
   color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.arrows:hover {
-  cursor: cell;
 }
 .game-images {
   width: 600px;
