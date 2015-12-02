@@ -146,8 +146,8 @@ div#screen-right {
   cursor: cell;
 }
 .game-images {
-  width: 625px;
-  height: auto;
+  width: 600px;
+  height: 420px;
   border: 1px solid white;
   display: inline-block;
   float: left;
