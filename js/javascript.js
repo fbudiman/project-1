@@ -83,6 +83,52 @@ $(function(){
   $("#cityscape7").hide();
   $("#cityscape9").hide();
 
+  $("#background2X").hide();
+  $("#cityscape8").hide();
+  $("#cityscape17").hide();
+
+  $("#background3").hide();
+  $("#cityscape1").hide();
+
+  $("#background3X").hide();
+  $("#cityscape6").hide();
+  $("#cityscape11").hide();
+
+  $("#background4").hide();
+  $("#cityscape22").hide();
+
+  $("#background4X").hide();
+  $("#cityscape3").hide();
+  $("#cityscape15").hide();
+
+  $("#background5").hide();
+  $("#cityscape2").hide();
+  $("#cityscape10").hide();
+
+  $("#background5X").hide();
+  $("#cityscape16").hide();
+
+  $("#background6").hide();
+  $("#cityscape20").hide();
+
+  $("#background6X").hide();
+  $("#cityscape4").hide();
+
+  $("#background7").hide();
+  $("#cityscape5").hide();
+  $("#cityscape13").hide();
+
+  $("#background7X").hide();
+  $("#cityscape14").hide();
+  $("#cityscape19").hide();
+
+  $("#background8").hide();
+  $("#cityscape12").hide();
+
+  $("#background8X").hide();
+  $("#cityscape18").hide();
+  $("#cityscape21").hide();
+
   $("#begin").hover(
     function() {
       $(this).animate({ color: "#700000" }, 'slow');
@@ -148,6 +194,10 @@ $(function(){
       if (screenOne == true) {
         screenTwo = true;
         screenOne = false;
+        $("#background2X").show('slow');
+        $("#background2").hide('slow');
+        $("#cityscape7").hide('slow');
+        $("#cityscape9").hide('slow');
       } else if (screenTwo == true) {
         screenThree = true;
         screenTwo = false;
