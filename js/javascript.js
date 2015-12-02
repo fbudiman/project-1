@@ -74,6 +74,7 @@ function leftImageBool() {
 
 $(function(){
 
+$('body').css('visibility', 'visible');
 
   $("#intro").hide();
   $("#goals").hide();
