@@ -10,6 +10,7 @@ var rightImage;
 var leftImage;
 var centerImage = true;
 var userObjects = [];
+var fungusCollection = [];
 
 var screenOne;
 var screenTwo;
@@ -30,6 +31,11 @@ var screenFifteen;
 var yellowShirt;
 var yellowShirtConfirm;
 var metalHelmetConfirm;
+var halloweenMaskConfirm;
+var digitalWatchConfirm;
+var hardHatConfirm;
+var sunglassesConfirm;
+var flashlightConfirm;
 
 function playerStats (life, strength, name) {
   this.life = life;
@@ -118,10 +124,19 @@ function checkForObjects() {
         alert("He fought back and attacked you, but you had your metal helmet on! You managed to get away. The metal helmet broke during the attack.");
         var metalIndex = userObjects.indexOf("Metal Helmet");
         userObjects.splice(metalIndex,1);
+    } else if (userObjects[i] == "Halloween Mask") {
+        halloweenMaskConfirm = true;
+    } else if (userObjects[i] == "Digital Watch") {
+        digitalWatchConfirm = true;
+    } else if (userObjects[i] == "Hard Hat") {
+        hardHatConfirm = true;
+    } else if (userObjects[i] == "Sunglasses") {
+        sunglassesConfirm = true;
+    } else if (userObjects[i] == "Flashlight Headband") {
+        flashlightConfirm = true;
     }
   }
 }
-
 
 $(function(){
 
@@ -639,6 +654,48 @@ $('body').css('visibility', 'visible');
       userObjects.push("Flashlight Headband");
     }
   })
+
+  $("#fungus-a").click(function() {
+    alert("You found zombie-strain fungus A!");
+    fungusCollection.push("Fungus-A");
+  })
+  $("#fungus-b").click(function() {
+    alert("You found zombie-strain fungus B!");
+    fungusCollection.push("Fungus-B");
+  })
+  $("#fungus-c").click(function() {
+    alert("You found zombie-strain fungus C!");
+    fungusCollection.push("Fungus-C");
+  })
+  $("#fungus-d").click(function() {
+    alert("You found zombie-strain fungus D!");
+    fungusCollection.push("Fungus-D");
+  })
+  $("#fungus-e").click(function() {
+    alert("You found zombie-strain fungus E!");
+    fungusCollection.push("Fungus-E");
+  })
+  $("#fungus-f").click(function() {
+    alert("You found zombie-strain fungus F!");
+    fungusCollection.push("Fungus-F");
+  })
+    $("#fungus-g").click(function() {
+    alert("You found zombie-strain fungus G!");
+    fungusCollection.push("Fungus-G");
+  })
+  $("#fungus-x").click(function() {
+    alert("You found zombie-strain fungus X!");
+    fungusCollection.push("Fungus-X");
+  })
+  $("#fungus-y").click(function() {
+    alert("You found zombie-strain fungus Y!");
+    fungusCollection.push("Fungus-Y");
+  })
+  $("#fungus-z").click(function() {
+    alert("You found zombie-strain fungus Z!");
+    fungusCollection.push("Fungus-Z");
+  })
+
   $("#human1").click(function() {
     var answer8 = prompt("A group of 3... Looks like this one is the smallest of the 3. Eat this human's brain?").toLowerCase();
     if (answer8 == "yes") {
