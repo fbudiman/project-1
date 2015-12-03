@@ -109,56 +109,74 @@ function specialAttack() {
   }
 }
 
-function checkForObjects() {
-  for (i in userObjects) {
-    if (userObjects[i] == "Yellow Shirt") {
-      specialAttack();
-      yellowShirtConfirm = true;
-      yellowShirt = prompt("Unfortunately that yellow shirt cost you big time. It was too bright so this human spotted you clearly and attacked extra hard. Would you like to discard?");
-      if (yellowShirt == "yes") {
-        var yellowIndex = userObjects.indexOf("Yellow Shirt");
-        userObjects.splice(yellowIndex,1);
+function checkForBadObjects() {
+  if (userObjects.length > 0) {
+    for (i in userObjects) {
+      if (userObjects[i] == "Yellow Shirt") {
+        specialAttack();
+        yellowShirtConfirm = true;
+        yellowShirt = prompt("Unfortunately that yellow shirt cost you big time. It was too bright so this human spotted you clearly and attacked extra hard. Would you like to discard?");
+        if (yellowShirt == "yes") {
+          var yellowIndex = userObjects.indexOf("Yellow Shirt");
+          userObjects.splice(yellowIndex,1);
+        } else {
+          alert("Ok.. Your loss.");
+        }
+      } else if (userObjects[i] == "Digital Watch") {
+          digitalWatchConfirm = true;
+          specialAttack();
+          digitalWatch = prompt("That digital watch messed you up big time. There was an alarm set, and it went off as you were trying to eat this human brain... and they managed to get a clear shot and hurt you good. Discard?");
+          if (digitalWatch == "yes") {
+            var digitalIndex = userObjects.indexOf("Digital Watch");
+            userObjects.splice(digitalIndex,1);
+          } else {
+            alert("Ok.. your loss.");
+          }
+      } else if (userObjects[i] == "Flashlight Headband") {
+          flashlightConfirm = true;
+          specialAttack();
+          flashlight = prompt("That flashlight headband didn't do you any good... All it did was give yourself away by shining light! That human saw you and attacked. Discard?")
+          if (flashlight == "yes") {
+            var flashlightIndex = userObjects.indexOf("Flashlight Headband");
+            userObjects.splice(flashlightIndex,1);
+          } else {
+            alert("Ok.. Your loss.");
+          }
       } else {
-        alert("Ok.. Your loss.");
+        eatHumanBrain();
       }
-    } else if (userObjects[i] == "Metal Helmet") {
+    }
+  } else {
+      eatHumanBrain();
+  }
+}
+
+function checkForProtection() {
+  if (userObjects.length > 0) {
+    for (i in userObjects) {
+      if (userObjects[i] == "Metal Helmet") {
         metalHelmetConfirm = true;
         alert("He fought back and attacked you, but you had your metal helmet on! You managed to get away. The metal helmet broke during the attack.");
         var metalIndex = userObjects.indexOf("Metal Helmet");
         userObjects.splice(metalIndex,1);
-    } else if (userObjects[i] == "Halloween Mask") {
-        halloweenMaskConfirm = true;
-        alert("The Halloween mask fooled the humans into thinking you were one of them! But they did rip it off you right before you ate their brain.");
-        var halloweenlIndex = userObjects.indexOf("Halloween Mask");
-        userObjects.splice(halloweenIndex,1);
-    } else if (userObjects[i] == "Digital Watch") {
-        digitalWatchConfirm = true;
-        specialAttack();
-        digitalWatch = prompt("That digital watch messed you up big time. There was an alarm set, and it went off as you were trying to eat this human brain... and they managed to get a clear shot and hurt you good.");
-        if (digitalWatch == "yes") {
-          var digitalIndex = userObjects.indexOf("Digital Watch");
-          userObjects.splice(digitalIndex,1);
-        } else {
-          alert("Ok.. your loss.");
-        }
-    } else if (userObjects[i] == "Hard Hat") {
-        hardHatConfirm = true;
-        alert("This human saw you coming and attacked back, but that hard hat really saved you! It did break in the process, but you managed to get away.");
-        var hardHatIndex = userObjects.indexOf("Hard Hat");
-        userObjects.splice(hardHatIndex,1);
-    } else if (userObjects[i] == "Sunglasses") {
-        sunglassesConfirm = true;
-    } else if (userObjects[i] == "Flashlight Headband") {
-        flashlightConfirm = true;
-        specialAttack();
-        flashlight = prompt("That flashlight headband didn't do you any good... All it did was give yourself away by shining light! That human saw you and attacked. Discard?")
-        if (flashlight == "yes") {
-          var flashlightIndex = userObjects.indexOf("Flashlight Headband");
-          userObjects.splice(flashlightIndex,1);
-        } else {
-          alert("Ok.. Your loss.");
-        }
+      } else if (userObjects[i] == "Halloween Mask") {
+          halloweenMaskConfirm = true;
+          alert("The Halloween mask fooled the humans into thinking you were one of them! But they did rip it off you right before you got away.");
+          var halloweenlIndex = userObjects.indexOf("Halloween Mask");
+          userObjects.splice(halloweenIndex,1);
+      } else if (userObjects[i] == "Hard Hat") {
+          hardHatConfirm = true;
+          alert("This human saw you coming and attacked back, but that hard hat really saved you! It did break in the process, but you managed to get away.");
+          var hardHatIndex = userObjects.indexOf("Hard Hat");
+          userObjects.splice(hardHatIndex,1);
+      } else if (userObjects[i] == "Sunglasses") {
+          sunglassesConfirm = true;
+      } else {
+          humanAttack();
+      }
     }
+  } else {
+    humanAttack();
   }
 }
 
@@ -787,11 +805,7 @@ $('body').css('visibility', 'visible');
   $("#human4").click(function() {
     var answer11 = prompt("A solo traveler.. this should be easy. Eat this human's brain?").toLowerCase();
     if (answer11 == "yes") {
-      checkForObjects();
-      if (yellowShirtConfirm != true) {
-        eatHumanBrain();
-        //add message
-      }
+      checkForBadObjects();
       $(this).unbind('click');
     } else if (answer11 == "no") {
     } else {
@@ -812,11 +826,7 @@ $('body').css('visibility', 'visible');
   $("#human6").click(function() {
     var answer13 = prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?").toLowerCase();
     if (answer13 == "yes") {
-      checkForObjects();
-      if (metalHelmetConfirm != true) {
-        humanAttack();
-        //message
-      }
+      checkForProtection();
       $(this).unbind('click');
     } else if (answer13 == "no") {
     } else {
@@ -826,50 +836,44 @@ $('body').css('visibility', 'visible');
   $("#human7").click(function() {
     var answer14 = prompt("Eat this human's brain? He looks kind of busy being violent...").toLowerCase();
     if (answer14 == "yes") {
-      checkForObjects();
-      if (metalHelmetConfirm != true) {
-        humanAttack();
-        //message
-      }
+      checkForProtection();
       $(this).unbind('click');
     }
   })
   $("#human8").click(function() {
     var answer15 = prompt("She's kind of hidden on the other side of the car. Maybe I can sneak and eat her brain?").toLowerCase();
     if (answer15 == "yes") {
-      checkForObjects();
-      if (yellowShirtConfirm != true) {
-        eatHumanBrain();
-      }
+      checkForBadObjects();
       $(this).unbind('click');
     }
   })
   $("#human9").click(function() {
     var answer16 = prompt("This guy looks like he's having too much fun destroying stuff. Take a chance and eat his brain or not?").toLowerCase();
     if (answer16 == "yes") {
-      checkForObjects();
-      if (metalHelmetConfirm != true) {
-        humanAttack();
-        //message
-      }
+      checkForProtection();
       $(this).unbind('click');
     }
   })
   $("#human10").click(function() {
     var answer17 = prompt("This human looks kind of scary but his friends are busy destroying the car. Eat his brain?").toLowerCase();
     if (answer17 == "yes") {
-      checkForObjects();
-      if (yellowShirtConfirm != true) {
-        eatHumanBrain();
-      }
+      checkForBadObjects();
       $(this).unbind('click');
     }
   })
   $("#human11").click(function() {
     var answer18 = prompt("One person should be easy enough. Eat this human's brain?").toLowerCase();
+    if (answer18 == "yes") {
+      checkForBadObjects();
+      $(this).unbind('click');
+    }
   })
   $("#human12").click(function() {
     var answer19 = prompt("Solo traveler. Eat this human's brain?").toLowerCase();
+    if (answer19 == "yes") {
+      checkForBadObjects();
+      $(this).unbind('click');
+    }
   })
   $("#human13").click(function() {
     var answer20 = prompt("A group of humans is a bit tougher. Wonder if they have weapons.. Risk it anyway and eat this human's brain?").toLowerCase();
