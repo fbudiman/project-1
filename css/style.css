@@ -153,3 +153,6 @@ div#screen-right {
   float: left;
   margin: 10px;
 }
+#zombie-thoughts {
+  font-style: italic;
+}

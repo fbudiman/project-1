@@ -261,71 +261,85 @@ $('body').css('visibility', 'visible');
           screenOne = false;
           $("#background2X").show('slow');
           $("#background2").hide();
+          $("#story-text").html("There has to be someone I can eat on this block. I don't smell any fungus... but maybe there's an object to pick up.");
         } else if (screenTwo == true) {
           screenThree = true;
           screenTwo = false;
           $("#background3").show('slow');
           $("#background2X").hide();
+          $("#story-text").html("I definitely smell fungus on this block. The question is where?? Also I'm sure I can find a useful object around here...");
         } else if (screenThree == true){
           screenFour = true;
           screenThree = false;
           $("#background3X").show('slow');
           $("#background3").hide();
+          $("#story-text").html("Oh good... a bunch of wild humans on this block. If I can pick out the ones who don't look as dangerous to eat, hopefully they won't notice. And... is that fungus I smell??");
         } else if (screenFour == true) {
           screenFive = true;
           screenFour = false;
           $("#background4").show('slow')
           $("#background3X").hide();
+          $("#story-text").html("Getting tired... I can't smell things as well. But I'm pretty sure there's something hidden around here.");
         } else if (screenFive == true) {
           screenSix = true;
           screenFive = false;
           $("#background4X").show('slow');
           $("#background4").hide();
+          $("#story-text").html("Okay... there's definitely something on this block. Why does everything have to be hidden?");
         } else if (screenSix == true) {
           screenSeven = true;
           screenSix = false;
           $("#background5").show('slow');
           $("#background4X").hide();
+          $("#story-text").html("15 blocks is not as close as I thought. These zombie legs are terrible. At least I'm halfway there. Still forever hungry though. There's also a good mix of zombies and humans on this block. Good thing my zombie senses can tell the difference.");
         } else if (screenSeven == true) {
           screenEight = true;
           screenSeven = false;
           $("#background5X").show('slow');
           $("#background5").hide();
+          $("#story-text").html("Hmm... not a lot going on here.");
         } else if (screenEight == true) {
           screenNine = true;
           screenEight = false;
           $("#background6").show('slow');
           $("#background5X").hide();
+          $("#story-text").html("Am I there yet? I think I'm close. Seriously dying over here and my smelling senses has gotten worse. I miss being a human.");
         } else if (screenNine == true) {
           screenTen = true;
           screenNine = false;
           $("#background6X").show('slow');
           $("#background6").hide();
+          $("#story-text").html("This place is a mess. Zombies and humans crawling all over the place.");
         } else if (screenTen == true) {
           screenEleven = true;
           screenTen = false;
           $("#background7").show('slow');
           $("#background6X").hide();
+          $("#story-text").html("I still need to search for all these fungi. Do I have enough yet? Is there any around here?");
         } else if (screenEleven == true) {
           screenTwelve = true;
           screenEleven = false;
           $("#background7X").show('slow');
           $("#background7").hide();
+          $("#story-text").html("There's gotta be something I can use around here... Or something to eat?");
         } else if (screenTwelve == true) {
           screenThirteen = true;
           screenTwelve = false;
           $("#background8X").show('slow');
           $("#background7X").hide();
+          $("#story-text").html("I'm seriously so close... I think. I just need to focus on not dying.");
         } else if (screenThirteen == true) {
           screenFourteen = true;
           screenThirteen = false;
           $("#background8").show('slow');
           $("#background8X").hide();
+          $("#story-text").html("I SEE THE LAB!!! Ok Ok I gotta get there while I'm still alive.. sort of. Do I have enough fungi?");
         } else if (screenFourteen == true) {
           screenFifteen = true;
           screenFourteen = false;
           $("#lab2").show('slow');
           $("#background8").hide();
+          $("#zombie-thoughts").hide();
           $("#story-text").html("You made it to the lab! Head over to the right to get the process started...");
         }
       } else {
