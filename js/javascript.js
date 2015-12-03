@@ -249,6 +249,8 @@ $('body').css('visibility', 'visible');
       $("#strength-stats").html(boyZombie.strength);
       $("#name-stats").html(boyZombie.name);
     }
+    $("#objects-stats").html(userObjects + " ");
+    $("#fungi-stats").html(fungusCollection + " ");
   });
 
   lifeTimer = setInterval(function(){ minusLife() }, 10000);
