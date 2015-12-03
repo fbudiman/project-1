@@ -40,7 +40,7 @@ function emptyLifeBar() {
 }
 
 function minusLife() {
-  if (active == true) {
+  if (active) {
     if (lifeBar.value > 0) {
       if (girlZombie != undefined) {
         lifeBar.value -= 2;
@@ -69,6 +69,22 @@ function leftImageBool() {
   leftImage = true;
   centerImage = false;
   rightImage = false;
+}
+
+function humanAttack() {
+  if (active) {
+    if (girlZombie != undefined) {
+      lifeBar.value -= 10;
+    } else {
+      lifeBar.value -= 5;
+    }
+  }
+}
+
+function eatHumanBrain() {
+  if (active) {
+    lifeBar.value += 5;
+  }
 }
 
 $(function(){
@@ -638,6 +654,8 @@ $('body').css('visibility', 'visible');
   })
   $("#human1").click(function() {
     var answer8 = prompt("A group of 3... Eat this human's brain? Or his friend's?").toLowerCase();
+    //if (answer8 == "yes") {
+    // START WORKING FROM HERE!!!
   })
   $("#human2").click(function() {
     var answer9 = prompt("A group of 3... Eat this human's brain?").toLowerCase();
