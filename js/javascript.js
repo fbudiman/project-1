@@ -180,6 +180,10 @@ function checkForProtection() {
   }
 }
 
+function pauseMessage() {
+  alert("Your game is on pause! You can't do anything.")
+}
+
 $(function(){
 
 $('body').css('visibility', 'visible');
@@ -188,10 +192,8 @@ $('body').css('visibility', 'visible');
   $("#goals").hide();
   $("#game-start").hide();
   $("#stats-show").hide();
-
   $(".game-images").hide();
   $("#background2").show();
-
   $(".text-hide").hide();
 
   $("#begin").hover(
@@ -200,14 +202,13 @@ $('body').css('visibility', 'visible');
     },function() {
       $(this).animate({ color: "#FFFFFF" }, 'slow');
   });
-
   $("#begin").click(function() {
     $(this).hide();
     $("#intro").show('slow');
   });
 
   $("#fran-zombie").click(function() {
-    userName = prompt("Your chosen zombie has forgotten her name. What would you like to name her?");
+    userName = prompt("Your chosen zombie has forgotten her human name. What would you like to name her?");
     $("#intro").hide('slow');
     $(".name").html(userName);
     $("#goals").show('slow');
@@ -215,7 +216,7 @@ $('body').css('visibility', 'visible');
   })
 
   $("#ryan-zombie").click(function() {
-    userName = prompt("Your chosen zombie has forgotten his name. What would you like to name him?");
+    userName = prompt("Your chosen zombie has forgotten his human name. What would you like to name him?");
     $("#intro").hide('slow');
     $(".name").html(userName);
     $("#goals").show('slow');
@@ -666,387 +667,609 @@ $('body').css('visibility', 'visible');
 
   $(".hover-msg").attr('title', '!!!');
 
-// ADD IF ACTIVE FOR EVERY SINGLE FUNCTIONS!!!
-
   $("#yellow-shirt").click(function() {
-    var answer1 = prompt("You found a random yellow shirt. Put it on?").toLowerCase();
-    if (answer1 == "yes") {
-      userObjects.push("Yellow Shirt");
-      $(this).unbind('click');
+    if (active) {
+      var answer1 = prompt("You found a random yellow shirt. Put it on?").toLowerCase();
+      if (answer1 == "yes") {
+        userObjects.push("Yellow Shirt");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#metal-helmet").click(function() {
-    var answer2 = prompt("You found a metal helmet. Put it on?").toLowerCase();
-    if (answer2 == "yes") {
-      userObjects.push("Metal Helmet");
-      $(this).unbind('click');
+    if (active) {
+      var answer2 = prompt("You found a metal helmet. Put it on?").toLowerCase();
+      if (answer2 == "yes") {
+        userObjects.push("Metal Helmet");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#halloween-mask").click(function() {
-    var answer3 = prompt("You found a Halloween mask. Put it on?").toLowerCase();
-    if (answer3 == "yes") {
-      userObjects.push("Halloween Mask");
-      $(this).unbind('click');
+    if (active) {
+      var answer3 = prompt("You found a Halloween mask. Put it on?").toLowerCase();
+      if (answer3 == "yes") {
+        userObjects.push("Halloween Mask");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#digital-watch").click(function() {
-    var answer4 = prompt("You found a digital watch. It still works. Put it on?").toLowerCase();
-    if (answer4 == "yes") {
-      userObjects.push("Digital Watch");
-      $(this).unbind('click');
+    if (active) {
+      var answer4 = prompt("You found a digital watch. It still works. Put it on?").toLowerCase();
+      if (answer4 == "yes") {
+        userObjects.push("Digital Watch");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#hard-hat").click(function() {
-    var answer5 = prompt("You found a hard hat. Put it on?").toLowerCase();
-    if (answer5 == "yes") {
-      userObjects.push("Hard Hat");
-      $(this).unbind('click');
+    if (active) {
+      var answer5 = prompt("You found a hard hat. Put it on?").toLowerCase();
+      if (answer5 == "yes") {
+        userObjects.push("Hard Hat");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#sunglasses").click(function() {
-    var answer6 = prompt("You found a pair of sunglasses. Put it on?").toLowerCase();
-    if (answer6 == "yes") {
-      userObjects.push("Sunglasses");
-      $(this).unbind('click');
+    if (active) {
+      var answer6 = prompt("You found a pair of sunglasses. Put it on?").toLowerCase();
+      if (answer6 == "yes") {
+        userObjects.push("Sunglasses");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#flashlight-headband").click(function() {
-    var answer7 = prompt("You found a flashlight headband. It's turned on. Put it on or no?").toLowerCase();
-    if (answer7 == "yes") {
-      userObjects.push("Flashlight Headband");
-      $(this).unbind('click');
+    if (active) {
+      var answer7 = prompt("You found a flashlight headband. It's turned on. Put it on or no?").toLowerCase();
+      if (answer7 == "yes") {
+        userObjects.push("Flashlight Headband");
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
 
   $("#fungus-a").click(function() {
-    alert("You found zombie-strain fungus A!");
-    fungusCollection.push("Fungus-A");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus A!");
+      fungusCollection.push("Fungus-A");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-b").click(function() {
-    alert("You found zombie-strain fungus B!");
-    fungusCollection.push("Fungus-B");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus B!");
+      fungusCollection.push("Fungus-B");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-c").click(function() {
-    alert("You found zombie-strain fungus C!");
-    fungusCollection.push("Fungus-C");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus C!");
+      fungusCollection.push("Fungus-C");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-d").click(function() {
-    alert("You found zombie-strain fungus D!");
-    fungusCollection.push("Fungus-D");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus D!");
+      fungusCollection.push("Fungus-D");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-e").click(function() {
-    alert("You found zombie-strain fungus E!");
-    fungusCollection.push("Fungus-E");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus E!");
+      fungusCollection.push("Fungus-E");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-f").click(function() {
-    alert("You found zombie-strain fungus F!");
-    fungusCollection.push("Fungus-F");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus F!");
+      fungusCollection.push("Fungus-F");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
     $("#fungus-g").click(function() {
-    alert("You found zombie-strain fungus G!");
-    fungusCollection.push("Fungus-G");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus G!");
+      fungusCollection.push("Fungus-G");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-x").click(function() {
-    alert("You found zombie-strain fungus X!");
-    fungusCollection.push("Fungus-X");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus X!");
+      fungusCollection.push("Fungus-X");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-y").click(function() {
-    alert("You found zombie-strain fungus Y!");
-    fungusCollection.push("Fungus-Y");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus Y!");
+      fungusCollection.push("Fungus-Y");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
   $("#fungus-z").click(function() {
-    alert("You found zombie-strain fungus Z!");
-    fungusCollection.push("Fungus-Z");
-    $(this).unbind('click');
+    if (active) {
+      alert("You found zombie-strain fungus Z!");
+      fungusCollection.push("Fungus-Z");
+      $(this).unbind('click');
+    } else {
+        pauseMessage();
+    }
   })
 
   $("#human1").click(function() {
-    var answer8 = prompt("A group of 3... Looks like this one is the smallest of the 3. Eat this human's brain?").toLowerCase();
-    if (answer8 == "yes") {
-      eatHumanBrain();
-      //add message saying you gained
-      $(this).unbind('click');
+    if (active) {
+      var answer8 = prompt("A group of 3... Looks like this one is the smallest of the 3. Eat this human's brain?").toLowerCase();
+      if (answer8 == "yes") {
+        eatHumanBrain();
+        //add message saying you gained
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human2").click(function() {
-    var answer9 = prompt("A group of 3 is more difficult than a single person... Eat this human's brain? Be careful.").toLowerCase();
-    if (answer9 == "yes") {
-      eatHumanBrain();
-      //add message
-      $(this).unbind('click');
+    if (active) {
+      var answer9 = prompt("A group of 3 is more difficult than a single person... Eat this human's brain? Be careful.").toLowerCase();
+      if (answer9 == "yes") {
+        eatHumanBrain();
+        //add message
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human3").click(function() {
-    var answer10 = prompt("A group of 3... This one is carrying something. Eat this brain?").toLowerCase();
-    if (answer10 == "yes") {
-      humanAttack();
-      //add message you lost
-      $(this).unbind('click');
+    if (active) {
+      var answer10 = prompt("A group of 3... This one is carrying something. Eat this brain?").toLowerCase();
+      if (answer10 == "yes") {
+        humanAttack();
+        //add message you lost
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human4").click(function() {
-    var answer11 = prompt("A solo traveler.. this should be easy. Eat this human's brain?").toLowerCase();
-    if (answer11 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer11 = prompt("A solo traveler.. this should be easy. Eat this human's brain?").toLowerCase();
+      if (answer11 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human5").click(function() {
-    var answer12 = prompt("A solo traveler.. this could be easy. Looks like he has a weapon though. Eat this human's brain?").toLowerCase();
-    if (answer12 == "yes") {
-      humanAttack();
-      //message
-      $(this).unbind('click');
+    if (active) {
+      var answer12 = prompt("A solo traveler.. this could be easy. Looks like he has a weapon though. Eat this human's brain?").toLowerCase();
+      if (answer12 == "yes") {
+        humanAttack();
+        //message
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human6").click(function() {
-    var answer13 = prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?").toLowerCase();
-    if (answer13 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer13 = prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?").toLowerCase();
+      if (answer13 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human7").click(function() {
-    var answer14 = prompt("Eat this human's brain? He looks kind of busy being violent...").toLowerCase();
-    if (answer14 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer14 = prompt("Eat this human's brain? He looks kind of busy being violent...").toLowerCase();
+      if (answer14 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human8").click(function() {
-    var answer15 = prompt("She's kind of hidden on the other side of the car. Maybe I can sneak and eat her brain?").toLowerCase();
-    if (answer15 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer15 = prompt("She's kind of hidden on the other side of the car. Maybe I can sneak and eat her brain?").toLowerCase();
+      if (answer15 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human9").click(function() {
-    var answer16 = prompt("This guy looks like he's having too much fun destroying stuff. Take a chance and eat his brain or not?").toLowerCase();
-    if (answer16 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer16 = prompt("This guy looks like he's having too much fun destroying stuff. Take a chance and eat his brain or not?").toLowerCase();
+      if (answer16 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human10").click(function() {
-    var answer17 = prompt("This human looks kind of scary but his friends are busy destroying the car. Eat his brain?").toLowerCase();
-    if (answer17 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer17 = prompt("This human looks kind of scary but his friends are busy destroying the car. Eat his brain?").toLowerCase();
+      if (answer17 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human11").click(function() {
-    var answer18 = prompt("One person should be easy enough. Eat this human's brain?").toLowerCase();
-    if (answer18 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer18 = prompt("One person should be easy enough. Eat this human's brain?").toLowerCase();
+      if (answer18 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human12").click(function() {
-    var answer19 = prompt("Solo traveler. Eat this human's brain?").toLowerCase();
-    if (answer19 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer19 = prompt("Solo traveler. Eat this human's brain?").toLowerCase();
+      if (answer19 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human13").click(function() {
-    var answer20 = prompt("A group of humans... This one is falling kind of behind. Eat her brain?").toLowerCase();
-    if (answer20 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer20 = prompt("A group of humans... This one is falling kind of behind. Eat her brain?").toLowerCase();
+      if (answer20 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human14").click(function() {
-    var answer21 = prompt("Eat this human's brain? Watch out for the other humans though.").toLowerCase();
-    if (answer21 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer21 = prompt("Eat this human's brain? Watch out for the other humans though.").toLowerCase();
+      if (answer21 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human15").click(function() {
-    var answer22 = prompt("This human has a bag... Hopefully no weapons inside. Eat this brain?").toLowerCase();
-    if (answer22 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer22 = prompt("This human has a bag... Hopefully no weapons inside. Eat this brain?").toLowerCase();
+      if (answer22 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human16").click(function() {
-    var answer23 = prompt("They're a bit farther from the main group. Eat this human's brain?").toLowerCase();
-    if (answer23 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer23 = prompt("They're a bit farther from the main group. Eat this human's brain?").toLowerCase();
+      if (answer23 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human17").click(function() {
-    var answer24 = prompt("Eat this human's brain? The others probably won't notice...").toLowerCase();
-    if (answer24 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer24 = prompt("Eat this human's brain? The others probably won't notice...").toLowerCase();
+      if (answer24 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human18").click(function() {
-    var answer25 = prompt("This guy looks violent. Eat his brain?").toLowerCase();
-    if (answer25 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer25 = prompt("This guy looks violent. Eat his brain?").toLowerCase();
+      if (answer25 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human19").click(function() {
-    var answer26 = prompt("This human looks extremely pissed off. Eat his brain?").toLowerCase();
-    if (answer26 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer26 = prompt("This human looks extremely pissed off. Eat his brain?").toLowerCase();
+      if (answer26 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human20").click(function() {
-    var answer27 = prompt("This one is not paying attention. Eat his brain?").toLowerCase();
-    if (answer27 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer27 = prompt("This one is not paying attention. Eat his brain?").toLowerCase();
+      if (answer27 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human21").click(function() {
-    var answer28 = prompt("Looks like he just killed a zombie. He could be tired or he could still hurt you. Eat his brain?").toLowerCase();
-    if (answer28 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer28 = prompt("Looks like he just killed a zombie. He could be tired or he could still hurt you. Eat his brain?").toLowerCase();
+      if (answer28 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human22").click(function() {
-    var answer29 = prompt("A group of 2... Could be easy. Do they have weapons? Or just risk it and eat his brain?").toLowerCase();
-    if (answer29 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer29 = prompt("A group of 2... Could be easy. Do they have weapons? Or just risk it and eat his brain?").toLowerCase();
+      if (answer29 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human23").click(function() {
-    var answer30 = prompt("They have backpacks. Risk it and eat this brain?").toLowerCase();
-    if (answer30 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer30 = prompt("They have backpacks. Risk it and eat this brain?").toLowerCase();
+      if (answer30 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human24").click(function() {
-    var answer31 = prompt("A solo traveler. He has a gun. Eat his brain?").toLowerCase();
-    if (answer31 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer31 = prompt("A solo traveler. He has a gun. Eat his brain?").toLowerCase();
+      if (answer31 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human25").click(function() {
-    var answer32 = prompt("This one has a friend next to her... Hope they don't have weapons. Eat this brain?").toLowerCase();
-    if (answer32 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer32 = prompt("This one has a friend next to her... Hope they don't have weapons. Eat this brain?").toLowerCase();
+      if (answer32 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human26").click(function() {
-    var answer33 = prompt("This one has a friend next to him... Hope they don't have weapons. Eat this brain?").toLowerCase();
-    if (answer33 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer33 = prompt("This one has a friend next to him... Hope they don't have weapons. Eat this brain?").toLowerCase();
+      if (answer33 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human27").click(function() {
-    var answer34 = prompt("This one is sneaking up behind some fellow zombies... Wonder why. Eat this brain?").toLowerCase();
-    if (answer34 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer34 = prompt("This one is sneaking up behind some fellow zombies... Wonder why. Eat this brain?").toLowerCase();
+      if (answer34 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human28").click(function() {
-    var answer35 = prompt("This one is standing really close to his friend. May be difficult. Eat his brain?").toLowerCase();
-    if (answer35 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer35 = prompt("This one is standing really close to his friend. May be difficult. Eat his brain?").toLowerCase();
+      if (answer35 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human29").click(function() {
-    var answer36 = prompt("This one is standing really close to her friend. May be difficult. Eat her brain?").toLowerCase();
-    if (answer36 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer36 = prompt("This one is standing really close to her friend. May be difficult. Eat her brain?").toLowerCase();
+      if (answer36 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#special-human").click(function() {
-    var answer46 = prompt("This human looks like he already got bit... He may be infected. Eat his brains anyway?").toLowerCase();
-    if (answer46 == "yes") {
-      fungusCollection.push("Fungus-H");
-      fungusCollection.push("Fungus-I");
-      checkForBadObjects();
-      //add message about how you gained extra fungi from him because he was working on finding his own vaccine
-      $(this).unbind('click');
+    if (active) {
+      var answer46 = prompt("This human looks like he already got bit... He may be infected. Eat his brains anyway?").toLowerCase();
+      if (answer46 == "yes") {
+        fungusCollection.push("Fungus-H");
+        fungusCollection.push("Fungus-I");
+        checkForBadObjects();
+        //add message about how you gained extra fungi from him because he was working on finding his own vaccine
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human30").click(function() {
-    var answer37 = prompt("A pair of travelers. Eat this one's brain?").toLowerCase();
-    if (answer37 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer37 = prompt("A pair of travelers. Eat this one's brain?").toLowerCase();
+      if (answer37 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human31").click(function() {
-    var answer38 = prompt("Eat this one?").toLowerCase();
-    if (answer38 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer38 = prompt("Eat this one?").toLowerCase();
+      if (answer38 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human32").click(function() {
-    var answer39 = prompt("This person is alone. Could be easy unless that backpack has a weapon in it. Eat this brain?").toLowerCase();
-    if (answer39 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer39 = prompt("This person is alone. Could be easy unless that backpack has a weapon in it. Eat this brain?").toLowerCase();
+      if (answer39 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human33").click(function() {
-    var answer40 = prompt("This one is just a little girl. Eat her brain?").toLowerCase();
-    if (answer40 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer40 = prompt("This one is just a little girl. Eat her brain?").toLowerCase();
+      if (answer40 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human34").click(function() {
-    var answer41 = prompt("This guy looks a bit too ready to fight off zombies. Eat his brain anyway?").toLowerCase();
-    if (answer41 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer41 = prompt("This guy looks a bit too ready to fight off zombies. Eat his brain anyway?").toLowerCase();
+      if (answer41 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human35").click(function() {
-    var answer42 = rompt("He's alone. Looks like a weapon on his left hand. Not sure if he's paying attention. Eat his brain?").toLowerCase();
-    if (answer42 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer42 = rompt("He's alone. Looks like a weapon on his left hand. Not sure if he's paying attention. Eat his brain?").toLowerCase();
+      if (answer42 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human36").click(function() {
-    var answer43 = prompt("Two humans perched under a tree. They look like they're resting. Eat this brain?").toLowerCase();
-    if (answer43 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer43 = prompt("Two humans perched under a tree. They look like they're resting. Eat this brain?").toLowerCase();
+      if (answer43 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human37").click(function() {
-    var answer44 = prompt("They look relaxed. Eat this brain?").toLowerCase();
-    if (answer44 == "yes") {
-      checkForBadObjects();
-      $(this).unbind('click');
+    if (active) {
+      var answer44 = prompt("They look relaxed. Eat this brain?").toLowerCase();
+      if (answer44 == "yes") {
+        checkForBadObjects();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
   $("#human38").click(function() {
-    var answer45 = prompt("This human was hiding behind a bunch of cars. Eat this brain?").toLowerCase();
-    if (answer45 == "yes") {
-      checkForProtection();
-      $(this).unbind('click');
+    if (active) {
+      var answer45 = prompt("This human was hiding behind a bunch of cars. Eat this brain?").toLowerCase();
+      if (answer45 == "yes") {
+        checkForProtection();
+        $(this).unbind('click');
+      }
+    } else {
+        pauseMessage();
     }
   })
 
