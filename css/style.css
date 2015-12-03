@@ -142,7 +142,8 @@ div#screen-right {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   margin-top: 40px;
   margin-right: 20px;
-  text-align: center;
+  text-align: left;
+  width: 500px;
 }
 .game-images {
   width: 600px;
@@ -152,4 +153,3 @@ div#screen-right {
   float: left;
   margin: 10px;
 }
-

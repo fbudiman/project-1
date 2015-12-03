@@ -169,8 +169,6 @@ function checkForProtection() {
           alert("This human saw you coming and attacked back, but that hard hat really saved you! It did break in the process, but you managed to get away.");
           var hardHatIndex = userObjects.indexOf("Hard Hat");
           userObjects.splice(hardHatIndex,1);
-      } else if (userObjects[i] == "Sunglasses") {
-          sunglassesConfirm = true;
       } else {
           humanAttack();
       }
@@ -194,7 +192,6 @@ $('body').css('visibility', 'visible');
   $("#stats-show").hide();
   $(".game-images").hide();
   $("#background2").show();
-  $(".text-hide").hide();
 
   $("#begin").hover(
     function() {
@@ -329,8 +326,7 @@ $('body').css('visibility', 'visible');
           screenFourteen = false;
           $("#lab2").show('slow');
           $("#background8").hide();
-          alert("You made it to the lab! Head over to the right to get the process started...");
-          //change alert to message?
+          $("#story-text").html("You made it to the lab! Head over to the right to get the process started...");
         }
       } else {
         alert("You can only go forward from the center path!");
@@ -495,16 +491,14 @@ $('body').css('visibility', 'visible');
           $("#lab2").hide('slow');
           $("#lab3").show('slow');
           if (fungusCollection.length < 6) {
-            alert("Uh oh... you only had " + fungusCollection.length + " zombie-strain fungi with you. The scientists had to put you down as a failed attempt.")
-            //change to message?
+            $("#story-text").html("Uh oh... you only had " + fungusCollection.length + " zombie-strain fungi with you. The scientists had to put you down as a failed attempt.")
             active = false;
           } else {
-            alert("You made it to the lab safely and you brought all the right zombie-strain fungi! Let the dezombifying begin.");
-            //change to message?
-            active = false;
-            if (sunglassesConfirm == true) {
-              alert("The scientists think you'll be a real cool human with those sunglasses you picked up. Free cool points.");
-            }
+              $("#story-text").html("Congratulations, " + userName + "! You've made it safely to the end AND with " + fungusCollection.length + " zombie-strain fungi! The scientists will now begin the process of dezombifying you.");
+              active = false;
+            //if (sunglassesConfirm == true) {
+            //  alert("The scientists think you'll be a real cool human with those sunglasses you picked up. Free cool points.");
+            //}
           }
         }
       }
