@@ -9,6 +9,7 @@ var pauseGame = [];
 var rightImage;
 var leftImage;
 var centerImage = true;
+var userObjects = [];
 
 var screenOne;
 var screenTwo;
@@ -69,8 +70,6 @@ function leftImageBool() {
   centerImage = false;
   rightImage = false;
 }
-
-
 
 $(function(){
 
@@ -194,7 +193,6 @@ $('body').css('visibility', 'visible');
   lifeTimer = setInterval(function(){ minusLife() }, 10000);
   //play around with timing - test out situations;
 
-
   $("#up-arrow").click(function() {
     if (active) {
       if (centerImage == true) {
@@ -275,7 +273,6 @@ $('body').css('visibility', 'visible');
       }
     }
   })
-
 
   $("#right-arrow").click(function() {
     if (active) {
@@ -598,142 +595,163 @@ $('body').css('visibility', 'visible');
   $(".hover-msg").attr('title', '!!!');
 
   $("#yellow-shirt").click(function() {
-    prompt("You found a random yellow shirt. Put it on?");
+    var answer1 = prompt("You found a random yellow shirt. Put it on?").toLowerCase();
+    if (answer1 == "yes") {
+      userObjects.push("Yellow Shirt");
+    }
   })
   $("#metal-helmet").click(function() {
-    prompt("You found a metal helmet. Put it on?");
+    var answer2 = prompt("You found a metal helmet. Put it on?").toLowerCase();
+    if (answer2 == "yes") {
+      userObjects.push("Metal Helmet");
+    }
   })
   $("#halloween-mask").click(function() {
-    prompt("You found a Halloween mask. Put it on?");
+    var answer3 = prompt("You found a Halloween mask. Put it on?").toLowerCase();
+    if (answer3 == "yes") {
+      userObjects.push("Halloween Mask");
+    }
   })
   $("#digital-watch").click(function() {
-    prompt("You found a digital watch. It still works. Put it on?");
+    var answer4 = prompt("You found a digital watch. It still works. Put it on?").toLowerCase();
+    if (answer4 == "yes") {
+      userObjects.push("Digital Watch");
+    }
   })
   $("#hard-hat").click(function() {
-    prompt("You found a hard hat. Put it on?");
+    var answer5 = prompt("You found a hard hat. Put it on?").toLowerCase();
+    if (answer5 == "yes") {
+      userObjects.push("Hard Hat");
+    }
   })
   $("#sunglasses").click(function() {
-    prompt("You found a pair of sunglasses. Put it on?");
+    var answer6 = prompt("You found a pair of sunglasses. Put it on?").toLowerCase();
+    if (answer6 == "yes") {
+      userObjects.push("Sunglasses");
+    }
   })
   $("#flashlight-headband").click(function() {
-    prompt("You found a flashlight headband. It's turned on. Put it on or no?");
+    var answer7 = prompt("You found a flashlight headband. It's turned on. Put it on or no?").toLowerCase();
+    if (answer7 == "yes") {
+      userObjects.push("Flashlight Headband");
+    }
   })
   $("#human1").click(function() {
-    prompt("A group of 3... Eat this human's brain? Or his friend's?");
+    var answer8 = prompt("A group of 3... Eat this human's brain? Or his friend's?").toLowerCase();
   })
   $("#human2").click(function() {
-    prompt("A group of 3... Eat this human's brain?");
+    var answer9 = prompt("A group of 3... Eat this human's brain?").toLowerCase();
   })
   $("#human3").click(function() {
-    prompt("A group of 3... Eat this human's brain? Not sure which one looks most delicious.");
+    var answer10 = prompt("A group of 3... Eat this human's brain? Not sure which one looks most delicious.").toLowerCase();
   })
   $("#human4").click(function() {
-    prompt("A solo traveler.. this should be easy. Eat this human's brain?");
+    var answer11 = prompt("A solo traveler.. this should be easy. Eat this human's brain?").toLowerCase();
   })
   $("#human5").click(function() {
-    prompt("A solo traveler.. this should be easy. Looks like he has a weapon though. Eat this human's brain?");
+    var answer12 = prompt("A solo traveler.. this should be easy. Looks like he has a weapon though. Eat this human's brain?").toLowerCase();
   })
   $("#human6").click(function() {
-    prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?");
+    var answer13 = prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?").toLowerCase();
   })
   $("#human7").click(function() {
-    prompt("This group looks busy. Take a chance and eat his brain or not?");
+    var answer14 = prompt("This group looks busy. Take a chance and eat his brain or not?").toLowerCase();
   })
   $("#human8").click(function() {
-    prompt("Eat this human's brain? Or his friend's?");
+    var answer15 = prompt("Eat this human's brain? Or his friend's?").toLowerCase();
   })
   $("#human9").click(function() {
-    prompt("This human looks kind of dangerous. Eat his brain?");
+    var answer16 = prompt("This human looks kind of dangerous. Eat his brain?").toLowerCase();
   })
   $("#human10").click(function() {
-    prompt("Eat this human's brain? He looks kind of busy...");
+    var answer17 = prompt("Eat this human's brain? He looks kind of busy...").toLowerCase();
   })
   $("#human11").click(function() {
-    prompt("One person should be easy enough. Eat this human's brain?");
+    var answer18 = prompt("One person should be easy enough. Eat this human's brain?").toLowerCase();
   })
   $("#human12").click(function() {
-    prompt("Solo traveler. Eat this human's brain?");
+    var answer19 = prompt("Solo traveler. Eat this human's brain?").toLowerCase();
   })
   $("#human13").click(function() {
-    prompt("A group of humans is a bit tougher. Wonder if they have weapons.. Risk it anyway and eat this human's brain?");
+    var answer20 = prompt("A group of humans is a bit tougher. Wonder if they have weapons.. Risk it anyway and eat this human's brain?").toLowerCase();
   })
   $("#human14").click(function() {
-    prompt("Eat this human's brain? Watch out for the other humans though.");
+    var answer21 = prompt("Eat this human's brain? Watch out for the other humans though.").toLowerCase();
   })
   $("#human15").click(function() {
-    prompt("This human has a bag... Hopefully no weapons inside. Eat this brain?");
+    var answer22 = prompt("This human has a bag... Hopefully no weapons inside. Eat this brain?").toLowerCase();
   })
   $("#human16").click(function() {
-    prompt("Eat this human's brain? Watch out for their friend.");
+    var answer23 = prompt("Eat this human's brain? Watch out for their friend.").toLowerCase();
   })
   $("#human17").click(function() {
-    prompt("Eat this human's brain? Watch out for their friend.");
+    var answer24 = prompt("Eat this human's brain? Watch out for their friend.").toLowerCase();
   })
   $("#human18").click(function() {
-    prompt("This guy looks violent. Eat his brain?");
+    var answer25 = prompt("This guy looks violent. Eat his brain?").toLowerCase();
   })
   $("#human19").click(function() {
-    prompt("This human looks extremely pissed off. Eat his brain?");
+    var answer26 = prompt("This human looks extremely pissed off. Eat his brain?").toLowerCase();
   })
   $("#human20").click(function() {
-    prompt("This one is not paying attention. Eat his brain?");
+    var answer27 = prompt("This one is not paying attention. Eat his brain?").toLowerCase();
   })
   $("#human21").click(function() {
-    prompt("Looks like he just killed a zombie. Eat his brain?");
+    var answer28 = prompt("Looks like he just killed a zombie. Eat his brain?").toLowerCase();
   })
   $("#human22").click(function() {
-    prompt("A group of 2... Could be easy. Do they have weapons? Or just risk it and eat his brain?");
+    var answer29 = prompt("A group of 2... Could be easy. Do they have weapons? Or just risk it and eat his brain?").toLowerCase();
   })
   $("#human23").click(function() {
-    prompt("They have backpacks. Risk it and eat this brain?");
+    var answer30 = prompt("They have backpacks. Risk it and eat this brain?").toLowerCase();
   })
   $("#human24").click(function() {
-    prompt("A solo traveler. He has a gun. Eat his brain?");
+    var answer31 = prompt("A solo traveler. He has a gun. Eat his brain?").toLowerCase();
   })
   $("#human25").click(function() {
-    prompt("This one has a friend next to her... Hope they don't have weapons. Eat this brain?");
+    var answer32 = prompt("This one has a friend next to her... Hope they don't have weapons. Eat this brain?").toLowerCase();
   })
   $("#human26").click(function() {
-    prompt("This one has a friend next to him... Hope they don't have weapons. Eat this brain?");
+    var answer33 = prompt("This one has a friend next to him... Hope they don't have weapons. Eat this brain?").toLowerCase();
   })
   $("#human27").click(function() {
-    prompt("This one is sneaking up behind some fellow zombies... Wonder why. Eat this brain?");
+    var answer34 = prompt("This one is sneaking up behind some fellow zombies... Wonder why. Eat this brain?").toLowerCase();
   })
   $("#human28").click(function() {
-    prompt("This one is standing really close to his friend. May be difficult. Eat his brain?");
+    var answer35 = prompt("This one is standing really close to his friend. May be difficult. Eat his brain?").toLowerCase();
   })
   $("#human29").click(function() {
-    prompt("This one is standing really close to her friend. May be difficult. Eat her brain?");
+    var answer36 = prompt("This one is standing really close to her friend. May be difficult. Eat her brain?").toLowerCase();
   })
   $("#human30").click(function() {
-    prompt("A pair of travelers. Eat this one's brain?");
+    var answer37 = prompt("A pair of travelers. Eat this one's brain?").toLowerCase();
   })
   $("#human31").click(function() {
-    prompt("Eat this one?");
+    var answer38 = prompt("Eat this one?").toLowerCase();
   })
   $("#human32").click(function() {
-    prompt("This person is alone. Could be easy unless that backpack has a weapon in it. Eat this brain?");
+    var answer39 = prompt("This person is alone. Could be easy unless that backpack has a weapon in it. Eat this brain?").toLowerCase();
   })
   $("#human33").click(function() {
-    prompt("This one is just a little girl. Eat her brain?");
+    var answer40 = prompt("This one is just a little girl. Eat her brain?").toLowerCase();
   })
   $("#human34").click(function() {
-    prompt("This guy looks a bit too ready to fight off zombies. Eat his brain anyway?");
+    var answer41 = prompt("This guy looks a bit too ready to fight off zombies. Eat his brain anyway?").toLowerCase();
   })
   $("#human35").click(function() {
-    prompt("He's alone. Looks like a weapon on his left hand. Eat his brain?");
+    var answer42 = rompt("He's alone. Looks like a weapon on his left hand. Eat his brain?").toLowerCase();
   })
   $("#human36").click(function() {
-    prompt("Two humans perched under a tree. They look like they're resting. Eat this brain?");
+    var answer43 = prompt("Two humans perched under a tree. They look like they're resting. Eat this brain?").toLowerCase();
   })
   $("#human37").click(function() {
-    prompt("They look unsuspecting. Eat this brain?");
+    var answer44 = prompt("They look unsuspecting. Eat this brain?").toLowerCase();
   })
   $("#human38").click(function() {
-    prompt("This human was hiding behind a bunch of cars. Eat this brain?");
+    var answer45 = prompt("This human was hiding behind a bunch of cars. Eat this brain?").toLowerCase();
   })
   $("#special-human").click(function() {
-    prompt("This human looks like he already got bit... He may be infected. Eat his brains anyway?");
+    var answer46 = prompt("This human looks like he already got bit... He may be infected. Eat his brains anyway?").toLowerCase();
   })
 
 
