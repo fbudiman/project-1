@@ -130,6 +130,9 @@ $('body').css('visibility', 'visible');
   $("#cityscape18").hide();
   $("#cityscape21").hide();
 
+  $("#lab2").hide();
+  $("#lab3").hide();
+
   $("#begin").hover(
     function() {
       $(this).animate({ color: "#700000" }, 'slow');
@@ -198,89 +201,72 @@ $('body').css('visibility', 'visible');
           screenOne = false;
           $("#background2X").show('slow');
           $("#background2").hide();
-          $("#cityscape7").hide();
-          $("#cityscape9").hide();
         } else if (screenTwo == true) {
           screenThree = true;
           screenTwo = false;
           $("#background3").show('slow');
           $("#background2X").hide();
-          $("#cityscape8").hide();
-          $("#cityscape17").hide();
         } else if (screenThree == true){
           screenFour = true;
           screenThree = false;
           $("#background3X").show('slow');
           $("#background3").hide();
-          $("#cityscape1").hide();
         } else if (screenFour == true) {
           screenFive = true;
           screenFour = false;
           $("#background4").show('slow')
           $("#background3X").hide();
-          $("#cityscape6").hide();
-          $("#cityscape11").hide();
         } else if (screenFive == true) {
           screenSix = true;
           screenFive = false;
           $("#background4X").show('slow');
           $("#background4").hide();
-          $("#cityscape22").hide();
         } else if (screenSix == true) {
           screenSeven = true;
           screenSix = false;
           $("#background5").show('slow');
           $("#background4X").hide();
-          $("#cityscape3").hide();
-          $("#cityscape15").hide();
         } else if (screenSeven == true) {
           screenEight = true;
           screenSeven = false;
           $("#background5X").show('slow');
           $("#background5").hide();
-          $("#cityscape2").hide();
-          $("#cityscape10").hide();
         } else if (screenEight == true) {
           screenNine = true;
           screenEight = false;
           $("#background6").show('slow');
           $("#background5X").hide();
-          $("#cityscape16").hide();
         } else if (screenNine == true) {
           screenTen = true;
           screenNine = false;
           $("#background6X").show('slow');
           $("#background6").hide();
-          $("#cityscape20").hide();
         } else if (screenTen == true) {
           screenEleven = true;
           screenTen = false;
           $("#background7").show('slow');
           $("#background6X").hide();
-          $("#cityscape4").hide();
         } else if (screenEleven == true) {
           screenTwelve = true;
           screenEleven = false;
           $("#background7X").show('slow');
           $("#background7").hide();
-          $("#cityscape5").hide();
-          $("#cityscape13").hide();
         } else if (screenTwelve == true) {
           screenThirteen = true;
           screenTwelve = false;
           $("#background8X").show('slow');
           $("#background7X").hide();
-          $("#cityscape14").hide();
-          $("#cityscape19").hide();
         } else if (screenThirteen == true) {
           screenFourteen = true;
           screenThirteen = false;
           $("#background8").show('slow');
           $("#background8X").hide();
-          $("#cityscape12").hide();
         } else if (screenFourteen == true) {
           screenFifteen = true;
           screenFourteen = false;
+          $("#lab2").show('slow');
+          $("#background8").hide();
+          alert("You made it to the lab! Head over to the right to get the process started...");
         }
       } else {
         alert("You can only go forward from the center path!");
@@ -440,7 +426,12 @@ $('body').css('visibility', 'visible');
           $("#background8").show('slow');
         }
       } else if (screenFifteen == true) {
-
+          if (centerImage == true) {
+          rightImageBool();
+          $(this).hide();
+          $("#lab2").hide('slow');
+          $("#lab3").show('slow');
+        }
       }
     }
   });
@@ -594,10 +585,17 @@ $('body').css('visibility', 'visible');
           $("#background8").show('slow');
         }
       } else if (screenFifteen == true) {
-
+        if (rightImage == true) {
+          centerImageBool();
+          $("#right-arrow").show();
+          $("#lab3").hide('slow');
+          $("#lab2").show('slow');
+        }
       }
     }
   });
+
+  $(".hover-msg").attr('title', '!!!');
 
 
 });
