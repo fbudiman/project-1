@@ -133,6 +133,8 @@ $('body').css('visibility', 'visible');
   $("#lab2").hide();
   $("#lab3").hide();
 
+  $(".text-hide").hide();
+
   $("#begin").hover(
     function() {
       $(this).animate({ color: "#700000" }, 'slow');
@@ -427,6 +429,7 @@ $('body').css('visibility', 'visible');
         }
       } else if (screenFifteen == true) {
           if (centerImage == true) {
+          active = false;
           rightImageBool();
           $(this).hide();
           $("#lab2").hide('slow');
@@ -586,16 +589,152 @@ $('body').css('visibility', 'visible');
         }
       } else if (screenFifteen == true) {
         if (rightImage == true) {
-          centerImageBool();
-          $("#right-arrow").show();
-          $("#lab3").hide('slow');
-          $("#lab2").show('slow');
+          active = false;
         }
       }
     }
   });
 
   $(".hover-msg").attr('title', '!!!');
+
+  $("#yellow-shirt").click(function() {
+    prompt("You found a random yellow shirt. Put it on?");
+  })
+  $("#metal-helmet").click(function() {
+    prompt("You found a metal helmet. Put it on?");
+  })
+  $("#halloween-mask").click(function() {
+    prompt("You found a Halloween mask. Put it on?");
+  })
+  $("#digital-watch").click(function() {
+    prompt("You found a digital watch. It still works. Put it on?");
+  })
+  $("#hard-hat").click(function() {
+    prompt("You found a hard hat. Put it on?");
+  })
+  $("#sunglasses").click(function() {
+    prompt("You found a pair of sunglasses. Put it on?");
+  })
+  $("#flashlight-headband").click(function() {
+    prompt("You found a flashlight headband. It's turned on. Put it on or no?");
+  })
+  $("#human1").click(function() {
+    prompt("A group of 3... Eat this human's brain? Or his friend's?");
+  })
+  $("#human2").click(function() {
+    prompt("A group of 3... Eat this human's brain?");
+  })
+  $("#human3").click(function() {
+    prompt("A group of 3... Eat this human's brain? Not sure which one looks most delicious.");
+  })
+  $("#human4").click(function() {
+    prompt("A solo traveler.. this should be easy. Eat this human's brain?");
+  })
+  $("#human5").click(function() {
+    prompt("A solo traveler.. this should be easy. Looks like he has a weapon though. Eat this human's brain?");
+  })
+  $("#human6").click(function() {
+    prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?");
+  })
+  $("#human7").click(function() {
+    prompt("This group looks busy. Take a chance and eat his brain or not?");
+  })
+  $("#human8").click(function() {
+    prompt("Eat this human's brain? Or his friend's?");
+  })
+  $("#human9").click(function() {
+    prompt("This human looks kind of dangerous. Eat his brain?");
+  })
+  $("#human10").click(function() {
+    prompt("Eat this human's brain? He looks kind of busy...");
+  })
+  $("#human11").click(function() {
+    prompt("One person should be easy enough. Eat this human's brain?");
+  })
+  $("#human12").click(function() {
+    prompt("Solo traveler. Eat this human's brain?");
+  })
+  $("#human13").click(function() {
+    prompt("A group of humans is a bit tougher. Wonder if they have weapons.. Risk it anyway and eat this human's brain?");
+  })
+  $("#human14").click(function() {
+    prompt("Eat this human's brain? Watch out for the other humans though.");
+  })
+  $("#human15").click(function() {
+    prompt("This human has a bag... Hopefully no weapons inside. Eat this brain?");
+  })
+  $("#human16").click(function() {
+    prompt("Eat this human's brain? Watch out for their friend.");
+  })
+  $("#human17").click(function() {
+    prompt("Eat this human's brain? Watch out for their friend.");
+  })
+  $("#human18").click(function() {
+    prompt("This guy looks violent. Eat his brain?");
+  })
+  $("#human19").click(function() {
+    prompt("This human looks extremely pissed off. Eat his brain?");
+  })
+  $("#human20").click(function() {
+    prompt("This one is not paying attention. Eat his brain?");
+  })
+  $("#human21").click(function() {
+    prompt("Looks like he just killed a zombie. Eat his brain?");
+  })
+  $("#human22").click(function() {
+    prompt("A group of 2... Could be easy. Do they have weapons? Or just risk it and eat his brain?");
+  })
+  $("#human23").click(function() {
+    prompt("They have backpacks. Risk it and eat this brain?");
+  })
+  $("#human24").click(function() {
+    prompt("A solo traveler. He has a gun. Eat his brain?");
+  })
+  $("#human25").click(function() {
+    prompt("This one has a friend next to her... Hope they don't have weapons. Eat this brain?");
+  })
+  $("#human26").click(function() {
+    prompt("This one has a friend next to him... Hope they don't have weapons. Eat this brain?");
+  })
+  $("#human27").click(function() {
+    prompt("This one is sneaking up behind some fellow zombies... Wonder why. Eat this brain?");
+  })
+  $("#human28").click(function() {
+    prompt("This one is standing really close to his friend. May be difficult. Eat his brain?");
+  })
+  $("#human29").click(function() {
+    prompt("This one is standing really close to her friend. May be difficult. Eat her brain?");
+  })
+  $("#human30").click(function() {
+    prompt("A pair of travelers. Eat this one's brain?");
+  })
+  $("#human31").click(function() {
+    prompt("Eat this one?");
+  })
+  $("#human32").click(function() {
+    prompt("This person is alone. Could be easy unless that backpack has a weapon in it. Eat this brain?");
+  })
+  $("#human33").click(function() {
+    prompt("This one is just a little girl. Eat her brain?");
+  })
+  $("#human34").click(function() {
+    prompt("This guy looks a bit too ready to fight off zombies. Eat his brain anyway?");
+  })
+  $("#human35").click(function() {
+    prompt("He's alone. Looks like a weapon on his left hand. Eat his brain?");
+  })
+  $("#human36").click(function() {
+    prompt("Two humans perched under a tree. They look like they're resting. Eat this brain?");
+  })
+  $("#human37").click(function() {
+    prompt("They look unsuspecting. Eat this brain?");
+  })
+  $("#human38").click(function() {
+    prompt("This human was hiding behind a bunch of cars. Eat this brain?");
+  })
+  $("#special-human").click(function() {
+    prompt("This human looks like he already got bit... He may be infected. Eat his brains anyway?");
+  })
 
 
 });
