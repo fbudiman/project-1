@@ -27,6 +27,10 @@ var screenThirteen;
 var screenFourteen;
 var screenFifteen;
 
+var yellowShirt;
+var yellowShirtConfirm;
+var metalHelmetConfirm;
+
 function playerStats (life, strength, name) {
   this.life = life;
   this.strength = strength;
@@ -87,6 +91,38 @@ function eatHumanBrain() {
   }
 }
 
+function specialAttack() {
+  if (active) {
+    if (girlZombie != undefined) {
+      lifeBar.value -= 15;
+    } else {
+      lifeBar.value -= 10;
+    }
+  }
+}
+
+function checkForObjects() {
+  for (i in userObjects) {
+    if (userObjects[i] == "Yellow Shirt") {
+      specialAttack();
+      yellowShirtConfirm = true;
+      yellowShirt = prompt("Unfortunately that yellow shirt cost you big time. It was too bright so this human spotted you clearly and attacked extra hard. Would you like to discard?");
+      if (yellowShirt == "yes") {
+        var yellowIndex = userObjects.indexOf("Yellow Shirt");
+        userObjects.splice(yellowIndex,1);
+      } else {
+        alert("Ok.. Your loss.");
+      }
+    } else if (userObjects[i] == "Metal Helmet") {
+        metalHelmetConfirm = true;
+        alert("He fought back and attacked you, but you had your metal helmet on! You managed to get away. The metal helmet broke during the attack.");
+        var metalIndex = userObjects.indexOf("Metal Helmet");
+        userObjects.splice(metalIndex,1);
+    }
+  }
+}
+
+
 $(function(){
 
 $('body').css('visibility', 'visible');
@@ -96,57 +132,8 @@ $('body').css('visibility', 'visible');
   $("#game-start").hide();
   $("#stats-show").hide();
 
-  $("#cityscape7").hide();
-  $("#cityscape9").hide();
-
-  $("#background2X").hide();
-  $("#cityscape8").hide();
-  $("#cityscape17").hide();
-
-  $("#background3").hide();
-  $("#cityscape1").hide();
-
-  $("#background3X").hide();
-  $("#cityscape6").hide();
-  $("#cityscape11").hide();
-
-  $("#background4").hide();
-  $("#cityscape22").hide();
-
-  $("#background4X").hide();
-  $("#cityscape3").hide();
-  $("#cityscape15").hide();
-
-  $("#background5").hide();
-  $("#cityscape2").hide();
-  $("#cityscape10").hide();
-
-  $("#background5X").hide();
-  $("#cityscape16").hide();
-
-  $("#background6").hide();
-  $("#cityscape20").hide();
-
-  $("#background6X").hide();
-  $("#cityscape4").hide();
-
-  $("#background7").hide();
-  $("#cityscape5").hide();
-  $("#cityscape13").hide();
-
-  $("#background7X").hide();
-  $("#cityscape14").hide();
-  $("#cityscape19").hide();
-
-  $("#background8X").hide();
-  $("#cityscape12").hide();
-
-  $("#background8").hide();
-  $("#cityscape18").hide();
-  $("#cityscape21").hide();
-
-  $("#lab2").hide();
-  $("#lab3").hide();
+  $(".game-images").hide();
+  $("#background2").show();
 
   $(".text-hide").hide();
 
@@ -653,24 +640,73 @@ $('body').css('visibility', 'visible');
     }
   })
   $("#human1").click(function() {
-    var answer8 = prompt("A group of 3... Eat this human's brain? Or his friend's?").toLowerCase();
-    //if (answer8 == "yes") {
-    // START WORKING FROM HERE!!!
+    var answer8 = prompt("A group of 3... Looks like this one is the smallest of the 3. Eat this human's brain?").toLowerCase();
+    if (answer8 == "yes") {
+      eatHumanBrain();
+      //add message saying you gained
+    } else if (answer8 == "no") {
+    } else {
+      alert("Please respond with yes or no.");
+    }
   })
   $("#human2").click(function() {
-    var answer9 = prompt("A group of 3... Eat this human's brain?").toLowerCase();
+    var answer9 = prompt("A group of 3 is more difficult than a single person... Eat this human's brain? Be careful.").toLowerCase();
+    if (answer9 == "yes") {
+      eatHumanBrain();
+      //add message
+    } else if (answer9 == "no") {
+    } else {
+      alert("Please respond with yes or no.");
+    }
   })
   $("#human3").click(function() {
-    var answer10 = prompt("A group of 3... Eat this human's brain? Not sure which one looks most delicious.").toLowerCase();
+    var answer10 = prompt("A group of 3... This one is carrying something. Eat this brain?").toLowerCase();
+    if (answer10 == "yes") {
+      humanAttack();
+      //add message you lost
+    } else if (answer10 == "no") {
+    } else {
+      alert("Please respond with yes or no.");
+    }
   })
   $("#human4").click(function() {
     var answer11 = prompt("A solo traveler.. this should be easy. Eat this human's brain?").toLowerCase();
+    if (answer11 == "yes") {
+      checkForObjects();
+      if (yellowShirtConfirm != true) {
+        eatHumanBrain();
+        //add message
+      }
+    } else if (answer11 == "no") {
+    } else {
+      alert("Please respond with yes or no.");
+    }
   })
   $("#human5").click(function() {
     var answer12 = prompt("A solo traveler.. this should be easy. Looks like he has a weapon though. Eat this human's brain?").toLowerCase();
+    if (answer12 == "yes") {
+      checkForObjects();
+      if (yellowShirtConfirm != true) {
+        humanAttack();
+        //message
+      }
+    } else if (answer == "no") {
+    } else {
+      alert("Please respond with yes or no.");
+    }
   })
   $("#human6").click(function() {
     var answer13 = prompt("Another lone traveler. He looks like he's geared up and has a backpack. Eat this human's brain?").toLowerCase();
+    if (answer13 == "yes") {
+      checkForObjects();
+      if (metalHelmetConfirm != true) {
+        humanAttack();
+        //message
+      }
+    } else if (answer13 == "no") {
+    } else {
+      alert("Please respond with yes or no.");
+    }
   })
   $("#human7").click(function() {
     var answer14 = prompt("This group looks busy. Take a chance and eat his brain or not?").toLowerCase();
