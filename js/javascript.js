@@ -10,9 +10,8 @@ var leftImage;
 var centerImage = true;
 var userObjects = [];
 var fungusCollection = [];
-var check1;
-var check2;
 
+//different levels or "blocks" of the game
 var screenOne;
 var screenTwo;
 var screenThree;
@@ -94,6 +93,7 @@ function eatHumanBrain() {
   }
 }
 
+//only applies if bad objects are in your collection
 function specialAttack() {
   if (active) {
     if (girlZombie != undefined) {
@@ -104,6 +104,7 @@ function specialAttack() {
   }
 }
 
+//checks to see if player has any sabotaging objects
 function checkForBadObjects() {
   if (userObjects.length > 0) {
     for (i in userObjects) {
@@ -145,6 +146,7 @@ function checkForBadObjects() {
   }
 }
 
+//checks to see if player has any protection objects
 function checkForProtection() {
   if (userObjects.length > 0) {
     for (i in userObjects) {
@@ -172,7 +174,7 @@ function checkForProtection() {
 }
 
 function pauseMessage() {
-  alert("Your game is on pause! You can't do anything.")
+  alert("Your game is not currently active! You can't do anything.")
 }
 
 $(function(){
@@ -852,7 +854,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human2").click(function() {
     if (active) {
-      var answer9 = prompt("A group of 3 is more difficult than a single person... Eat this human's brain? Be careful.").toLowerCase();
+      var answer9 = prompt("A group of 3 is more difficult than a single person... But this one doesn't have a weapon. Eat this human's brain? Be careful.").toLowerCase();
       if (answer9 == "yes") {
         eatHumanBrain();
         $("#narrative").html("Yummy.");
@@ -864,7 +866,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human3").click(function() {
     if (active) {
-      var answer10 = prompt("A group of 3... This one is carrying something. Eat this brain?").toLowerCase();
+      var answer10 = prompt("A group of 3... This one is carrying something. Be cautious. Eat this brain?").toLowerCase();
       if (answer10 == "yes") {
         humanAttack();
         $("#narrative").html("Oh crap, this guy had a big weapon on him. I shouldn't have gone for his brain. Oww.");
@@ -887,7 +889,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human5").click(function() {
     if (active) {
-      var answer12 = prompt("A solo traveler.. this could be easy. Looks like he has a weapon though. Eat this human's brain?").toLowerCase();
+      var answer12 = prompt("A solo traveler.. this could be easy. But it looks like he has a weapon though. Eat this human's brain?").toLowerCase();
       if (answer12 == "yes") {
         humanAttack();
         $("#narrative").html("Owww should've known not to go for someone with a weapon like that. Gotta be careful next time.");
@@ -910,7 +912,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human7").click(function() {
     if (active) {
-      var answer14 = prompt("Eat this human's brain? He looks kind of busy being violent...").toLowerCase();
+      var answer14 = prompt("This human looks busy being violent but I'd rather not have him do that to me... Eat this human's brain?").toLowerCase();
       if (answer14 == "yes") {
         checkForProtection();
         $("#additional-narrative").html("Gotta watch out for big groups and make sure to only attack if the rest of them won't notice.");
@@ -922,7 +924,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human8").click(function() {
     if (active) {
-      var answer15 = prompt("She's kind of hidden on the other side of the car. Maybe I can sneak and eat her brain?").toLowerCase();
+      var answer15 = prompt("She's kind of hidden on the other side of the car. Hopefully her friends won't notice and maybe I can sneak and eat her brain?").toLowerCase();
       if (answer15 == "yes") {
         checkForBadObjects();
         $("#additional-narrative").html("Hmm. I gotta go for the less dangerous humans. If their friends are busy, even better.");
@@ -946,7 +948,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human10").click(function() {
     if (active) {
-      var answer17 = prompt("This human looks kind of scary but his friends are busy destroying the car. Eat his brain?").toLowerCase();
+      var answer17 = prompt("This human looks kind of off to the side but his friends are busy destroying the car. I don't think they'll notice. Eat his brain?").toLowerCase();
       if (answer17 == "yes") {
         checkForBadObjects();
         $("#additional-narrative").html("Hmm. I gotta go for the less dangerous humans. If their friends are busy, even better.");
@@ -991,7 +993,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human14").click(function() {
     if (active) {
-      var answer21 = prompt("Eat this human's brain? Watch out for the other humans though.").toLowerCase();
+      var answer21 = prompt("Eat this human's brain? Watch out for the other humans though. This one is standing real close to that other human.").toLowerCase();
       if (answer21 == "yes") {
         checkForProtection();
         $(this).unbind('click');
@@ -1002,7 +1004,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human15").click(function() {
     if (active) {
-      var answer22 = prompt("This human has a bag... Hopefully no weapons inside. Eat this brain?").toLowerCase();
+      var answer22 = prompt("This human has a bag... Hopefully no weapons inside but you never know. Eat this brain?").toLowerCase();
       if (answer22 == "yes") {
         checkForProtection();
         $("#additional-narrative").html("Ok. I guess there was a weapon in there.");
@@ -1069,7 +1071,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human21").click(function() {
     if (active) {
-      var answer28 = prompt("Looks like he just killed a zombie. He could be tired or he could still hurt you. Eat his brain?").toLowerCase();
+      var answer28 = prompt("Looks like he just killed a zombie. He could be tired or he could still hurt you. 50/50 chance. Eat his brain?").toLowerCase();
       if (answer28 == "yes") {
         checkForBadObjects();
         $("#additional-narrative").html("Well I guess that guy was tired.");
@@ -1081,10 +1083,10 @@ $('body').css('visibility', 'visible');
   })
   $("#human22").click(function() {
     if (active) {
-      var answer29 = prompt("A group of 2... Could be easy. Do they have weapons? Or just risk it and eat his brain?").toLowerCase();
+      var answer29 = prompt("A group of 2... Could be easy. Do they have weapons in those backpacks? Or just risk it and eat his brain?").toLowerCase();
       if (answer29 == "yes") {
-        checkForProtection();
-        $("#additional-narrative").html("If they look like they have weapons... they probably do.");
+        checkForBadObjects();
+        $("#additional-narrative").html("I guess that backpack was filled with just food.");
         $(this).unbind('click');
       }
     } else {
@@ -1093,10 +1095,10 @@ $('body').css('visibility', 'visible');
   })
   $("#human23").click(function() {
     if (active) {
-      var answer30 = prompt("They have backpacks. Risk it and eat this brain?").toLowerCase();
+      var answer30 = prompt("They have backpacks. Good or bad? Risk it and eat this brain?").toLowerCase();
       if (answer30 == "yes") {
         checkForBadObjects();
-        $("#additional-narrative").html("Some people look like they have weapons... but they don't. How am I supposed to distinguish???");
+        $("#additional-narrative").html("Ok... in this case the backpack was not filled with weapons. That's not usually the case though...");
         $(this).unbind('click');
       }
     } else {
@@ -1162,7 +1164,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human29").click(function() {
     if (active) {
-      var answer36 = prompt("This one is standing really close to her friend. Hmmm. Eat her brain?").toLowerCase();
+      var answer36 = prompt("This one is standing really close to her friend. She looks really cautious. Eat her brain?").toLowerCase();
       if (answer36 == "yes") {
         checkForProtection();
         $(this).unbind('click');
@@ -1235,7 +1237,7 @@ $('body').css('visibility', 'visible');
       var answer41 = prompt("This guy looks a bit too ready to fight off zombies. Eat his brain anyway?").toLowerCase();
       if (answer41 == "yes") {
         checkForProtection();
-        $("#additional-narrative").html("Seems fairly obvious that I shouldn't have attacked this guy. Big guy with a lot of weapons traveling with a fellow cold-blooded killer little girl. Hm. Wonder what they're doing.");
+        $("#additional-narrative").html("Seems fairly obvious that I shouldn't have attacked this guy. Big guy with a lot of weapons traveling with a fellow cold-blooded killer little girl. What a combo. Wonder what they're doing.");
         $(this).unbind('click');
       }
     } else {
@@ -1244,7 +1246,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human35").click(function() {
     if (active) {
-      var answer42 = prompt("He's alone. Looks like a weapon on his left hand. Not sure if he's paying attention. Eat his brain?").toLowerCase();
+      var answer42 = prompt("He's alone. Looks like a weapon on his left hand. Not sure if he's paying attention though. Eat his brain?").toLowerCase();
       if (answer42 == "yes") {
         checkForBadObjects();
         $(this).unbind('click');
