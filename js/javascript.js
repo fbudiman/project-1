@@ -162,7 +162,7 @@ function checkForProtection() {
           userObjects.splice(hardHatIndex,1);
       } else {
           humanAttack();
-          $("I wish these humans would stop attacking me and just let me eat them. Owwowow.");
+          $("#narrative").html("I wish these humans would stop attacking me and just let me eat them. Owwowow.");
       }
     }
   } else {
