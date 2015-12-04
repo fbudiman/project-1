@@ -32,6 +32,7 @@ var screenFifteen;
 var yellowShirt;
 var digitalWatch;
 var flashlight;
+var sunglasses;
 
 function playerStats (life, strength, name) {
   this.life = life;
@@ -108,7 +109,7 @@ function checkForBadObjects() {
     for (i in userObjects) {
       if (userObjects[i] == "Yellow Shirt") {
         specialAttack();
-        yellowShirt = prompt("Unfortunately that yellow shirt cost you big time. It was too bright so this human spotted you clearly and attacked extra hard. Would you like to discard?");
+        yellowShirt = prompt("Unfortunately that yellow shirt cost you big time. It was too bright so this human spotted you clearly and attacked extra hard. Would you like to discard?").toLowerCase();
         if (yellowShirt == "yes") {
           var yellowIndex = userObjects.indexOf("Yellow Shirt");
           userObjects.splice(yellowIndex,1);
@@ -117,7 +118,7 @@ function checkForBadObjects() {
         }
       } else if (userObjects[i] == "Digital Watch") {
           specialAttack();
-          digitalWatch = prompt("That digital watch messed you up big time. There was an alarm set, and it went off as you were trying to eat this human brain... and they managed to get a clear shot and hurt you good. Discard?");
+          digitalWatch = prompt("That digital watch messed you up big time. There was an alarm set, and it went off as you were trying to eat this human brain... and they managed to get a clear shot and hurt you good. Discard?").toLowerCase();
           if (digitalWatch == "yes") {
             var digitalIndex = userObjects.indexOf("Digital Watch");
             userObjects.splice(digitalIndex,1);
@@ -126,7 +127,7 @@ function checkForBadObjects() {
           }
       } else if (userObjects[i] == "Flashlight Headband") {
           specialAttack();
-          flashlight = prompt("That flashlight headband didn't do you any good... All it did was give yourself away by shining light! That human saw you and attacked. Discard?")
+          flashlight = prompt("That flashlight headband didn't do you any good... All it did was give yourself away by shining light! That human saw you and attacked. Discard?").toLowerCase();
           if (flashlight == "yes") {
             var flashlightIndex = userObjects.indexOf("Flashlight Headband");
             userObjects.splice(flashlightIndex,1);
@@ -494,21 +495,18 @@ $('body').css('visibility', 'visible');
         }
       } else if (screenFifteen == true) {
           if (centerImage == true) {
-          rightImageBool();
-          $(this).hide();
-          $("#lab2").hide('slow');
-          $("#lab3").show('slow');
-          if (fungusCollection.length < 6) {
-            $("#story-text").html("Uh oh... you only had " + fungusCollection.length + " zombie-strain fungi with you. The scientists had to put you down as a failed attempt.")
-            active = false;
-          } else {
-              $("#story-text").html("Congratulations, " + userName + "! You've made it safely to the end AND with " + fungusCollection.length + " zombie-strain fungi! The scientists will now begin the process of dezombifying you.");
+            rightImageBool();
+            $(this).hide();
+            $("#lab2").hide('slow');
+            $("#lab3").show('slow');
+            if (fungusCollection.length < 6) {
+              $("#story-text").html("Uh oh... you only had " + fungusCollection.length + " zombie-strain fungi with you. The scientists had to put you down as a failed attempt.")
               active = false;
-            //if (sunglassesConfirm == true) {
-            //  alert("The scientists think you'll be a real cool human with those sunglasses you picked up. Free cool points.");
-            //}
+            } else {
+                $("#story-text").html("Congratulations, " + userName + "! You've made it safely to the end AND with " + fungusCollection.length + " zombie-strain fungi! The scientists will now begin the process of dezombifying you.");
+                active = false;
+            }
           }
-        }
       }
     }
   });
