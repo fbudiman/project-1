@@ -135,12 +135,12 @@ function checkForBadObjects() {
           }
       } else {
           eatHumanBrain();
-          $("#narrative").html("Mmmmmm... Tasty.");
+          document.getElementById("narrative").innerHTML = "Mmmm... tasty";
       }
     }
   } else {
       eatHumanBrain();
-      $("#narrative").html("That was delicious.");
+      document.getElementById("narrative").innerHTML = "That was delicious.";
   }
 }
 
@@ -161,12 +161,12 @@ function checkForProtection() {
           userObjects.splice(hardHatIndex,1);
       } else {
           humanAttack();
-          $("#narrative").html("I wish these humans would stop attacking me and just let me eat them. Owwowow.");
+          document.getElementById("narrative").innerHTML = "I wish these humans would stop attacking me and just let me eat them. Owwowow.";
       }
     }
   } else {
     humanAttack();
-    $("#narrative").html("Ok that really hurt.");
+    document.getElementById("narrative").innerHTML = "Ok that really hurt.";
   }
 }
 
@@ -1246,7 +1246,7 @@ $('body').css('visibility', 'visible');
   })
   $("#human35").click(function() {
     if (active) {
-      var answer42 = rompt("He's alone. Looks like a weapon on his left hand. Not sure if he's paying attention. Eat his brain?").toLowerCase();
+      var answer42 = prompt("He's alone. Looks like a weapon on his left hand. Not sure if he's paying attention. Eat his brain?").toLowerCase();
       if (answer42 == "yes") {
         checkForBadObjects();
         $(this).unbind('click');
