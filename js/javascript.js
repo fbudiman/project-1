@@ -1,4 +1,3 @@
-
 var userName;
 var girlZombie;
 var boyZombie;
