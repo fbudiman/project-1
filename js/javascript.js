@@ -248,6 +248,7 @@ $('body').css('visibility', 'visible');
   lifeTimer = setInterval(function(){ minusLife() }, 15000);
   //play around with timing - test out situations;
 
+//up arrow for each block
   $("#up-arrow").click(function() {
     if (active) {
       if (centerImage == true) {
@@ -345,6 +346,7 @@ $('body').css('visibility', 'visible');
     }
   })
 
+//right arrow functions per block of street
   $("#right-arrow").click(function() {
     if (active) {
       if (screenOne == true) {
@@ -513,6 +515,7 @@ $('body').css('visibility', 'visible');
     }
   });
 
+//left arrow for each block
   $("#left-arrow").click(function() {
     if (active) {
       if (screenOne == true) {
