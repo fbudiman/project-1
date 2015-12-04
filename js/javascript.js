@@ -333,6 +333,8 @@ $('body').css('visibility', 'visible');
           $("#lab2").show('slow');
           $("#background8").hide();
           $("#zombie-thoughts").hide();
+          $("#additional-narrative").hide();
+          $("#narrative").hide();
           $("#story-text").html("You made it to the lab! Head over to the right to get the process started...");
         }
       } else {
